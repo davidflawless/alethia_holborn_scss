@@ -1,0 +1,200 @@
+<?php
+/**
+	* Template Name: Page - Contact
+*/
+?>
+
+
+<?php
+    $knight_frank       = get_field('contact_block')['knight_frank']['contact_block__contact_details'];
+    $knight_frank_logo  = get_field('contact_block')['knight_frank']['contact_block__logo'];
+    
+    $bluebook           = get_field('contact_block')['bluebook']['contact_block__contact_details'];
+    $bluebook_logo      = get_field('contact_block')['bluebook']['contact_block__logo'];
+
+    $image_right_url        = get_field('image_right')['url'];
+    $image_right_overlay    = get_field('image_right_overlay');
+
+
+    function display_page_img($loading,$img_desktop,$img_tablet,$img_mobile,$img_array) { 
+        
+        
+        $loading            = 'eager';
+        $img_desktop        = 'desktop_logo';
+        $img_tablet         = 'medium_large';
+        $img_mobile         = 'large';
+            
+        
+        ?>
+
+        <div class="row">
+
+            <div class="col-6 col-lg-5 col-xl-auto">
+
+                <div class="pb-5">
+                    
+                    <div class="d-block d-lg-none">
+                        <?php
+                        img_display(
+                            $loading,
+                            $img_mobile,
+                            $img_array
+                        );
+                        ?>
+                    </div>
+
+                    <div class="d-none d-lg-block d-xl-none">
+                        <?php
+                        img_display(
+                            $loading,
+                            $img_tablet,
+                            $img_array
+                        );
+                        ?>
+                    </div>
+
+                    <div class="d-none d-xl-block">
+                        <?php
+                        img_display(
+                            $loading,
+                            $img_desktop,
+                            $img_array
+                        );
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <?php
+    }
+
+
+
+
+
+
+    
+    //$side_logo      = get_field('side_logo');
+
+    //my_print_r($bluebook_logo);
+?>
+
+
+<?php get_header(); ?>
+
+
+
+<div id="page-contact" class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-12 col-lg-8 col-xl-7 px-lg-5">
+
+            <div class="contact-details__pos">
+
+            <?php
+            if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <div class="entry-content">
+                        <?php the_content(); ?>			
+                    </div>     
+                </article> <?php
+            endwhile; 
+            ?>
+
+
+            <div class="row contact-details pt-5">
+
+                <div class="col-12 col-md-6 col-xxl-auto knight-frank pe-md-4 pe-xl-3 pe-xxl-5 pb-4">
+
+                    <?php display_page_img($loading,$img_desktop,$img_tablet,$img_mobile,$knight_frank_logo); ?>
+                    
+                    <?php
+                    for ($x = 0; $x <= 2; $x++) { ?>
+                        
+                        <div class="contact-block pb-4">
+                            <h5><?= $knight_frank[$x]['name']; ?></h5>
+                            <p>
+                            M: <a href="tel;:<?= $knight_frank[$x]['mobile']; ?>"><?= $knight_frank[$x]['mobile']; ?></a><br/>
+                            T: <a href="tel;:<?= $knight_frank[$x]['telephone']; ?>"><?= $knight_frank[$x]['telephone']; ?></a><br/>
+                            <a href="mailto:<?= $knight_frank[$x]['email']; ?>"><?= $knight_frank[$x]['email']; ?></a><br/>
+                            </p>
+                        </div>
+                    <?php
+                    }
+                    ?>
+                </div>
+
+                <div class="col-12 col-md-6 col-xxl-auto bluebook ps-md-4 ps-xl-3 ps-xxl-5 pb-4">
+
+                    <?php display_page_img($loading,$img_desktop,$img_tablet,$img_mobile,$bluebook_logo); ?>
+                    
+                    <?php
+                    for ($x = 0; $x <= 2; $x++) { ?>
+                        
+                        <div class="contact-block pb-4">
+                            <h5><?= $bluebook[$x]['name']; ?></h5>
+                            <p>
+                            M: <a href="tel;:<?= $bluebook[$x]['mobile']; ?>"><?= $bluebook[$x]['mobile']; ?></a><br/>
+                            T: <a href="tel;:<?= $bluebook[$x]['telephone']; ?>"><?= $bluebook[$x]['telephone']; ?></a><br/>
+                            <a href="mailto:<?= $bluebook[$x]['email']; ?>"><?= $bluebook[$x]['email']; ?></a><br/>
+                            </p>
+                        </div>
+                    <?php
+                    }
+                    ?>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+        <div class="col-12 col-lg-4 offset-xl-1 col-xl-4 img-right" style="background-image: url(<?= $image_right_url; ?>)">
+
+            <?php
+            $loading        = 'eager';
+            $img_desktop    = 'large';
+            $img_tablet     = 'medium';
+            $img_mobile     = 'medium';
+            ?>
+
+            <div class="img-right__overlay-pos">
+                
+                <div class="d-block d-lg-none">
+                    <?php
+                    img_display(
+                        $loading,
+                        $img_mobile,
+                        $image_right_overlay
+                    );
+                    ?>
+                </div>
+
+                <div class="d-none d-lg-block d-xl-none">
+                    <?php
+                    img_display(
+                        $loading,
+                        $img_tablet,
+                        $image_right_overlay
+                    );
+                    ?>
+                </div>
+
+                <div class="d-none d-xl-block">
+                    <?php
+                    img_display(
+                        $loading,
+                        $img_desktop,
+                        $image_right_overlay
+                    );
+                    ?>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+</div>
+
+<?php get_footer(); ?>

@@ -1,0 +1,45 @@
+@use "./scss-abstracts";
+// .links-transition ('color 0.5s');
+// .links-transition ('background-color 0.5s');
+
+.page-id-2 footer {
+    display: none;
+}
+
+footer {
+
+background-color: orange;
+
+    background-color: scss-abstracts.$brand-dark-grey;
+    //height: 82px;
+
+    // @media @smv {
+
+    // position: fixed;
+    // bottom: 0;
+    // width: 100%;
+
+    // }
+    
+    // @media @lrgv {
+    //     display: none;
+    // }
+    
+
+    .footer-logo__pos {
+
+        display: table;
+        margin: 0 auto;
+        padding: 1rem 0;
+    }
+    
+    .copyright {
+
+        padding-bottom: 1rem;
+
+        p {
+            font-size: .7rem;
+            text-align: center;
+        }
+    }
+}

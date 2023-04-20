@@ -1,0 +1,375 @@
+/* 
+*
+* ** Demonstration only **
+*
+* fonts
+*/
+
+// :: Import mixin form 'node_modules'
+@use "./node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins";
+
+@use "../scss-mixins";
+
+$default-grid-gutter--small: 60px;
+
+$default-grid-gutter--large: 100px;
+
+.abstract-flexbox-grid {
+  // :: Variations
+  // Two Columns Page Include
+  &-acf-field-group-2-flexable-layout-talk-to-us-about-your-case,
+  &-two-columns-even,
+  &-acf-field-group-2-flexable-layout-two-columns-content {
+    &__grid {
+      //background-color: orange;
+      @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter--small);
+      //display: flex;
+
+      @include scss-mixins.for-size(phone-only) {
+        display: grid;
+        padding: 1rem;
+      }
+
+      @include scss-mixins.for-size(tablet-portrait-up) {
+        display: grid;
+        padding: 2rem;
+      }
+
+      @include scss-mixins.for-size(tablet-landscape-up) {
+        display: flex;
+        //padding: 1rem;
+      }
+
+      @include scss-mixins.for-size(desktop-up) {
+        padding: 0;
+      }
+
+      @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter--small);
+    }
+
+    &__grid-item {
+      flex: 1;
+      @include flexbox-grid-mixins.grid-col(
+        $col: 6,
+        $gutter: $default-grid-gutter--small
+      );
+      margin-bottom: 0;
+
+      &:first-child {
+        // background-color: red;
+      }
+      &:last-child {
+        // background-color: green;
+      }
+    }
+
+    @include scss-mixins.for-size(big-desktop-up) {
+      //display: flex;
+
+      &__grid {
+        // background-color: pink;
+        @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter--large);
+        display: flex;
+
+        @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter--large);
+      }
+
+      &__grid-item {
+        flex: 1;
+        @include flexbox-grid-mixins.grid-col(
+          $col: 6,
+          $gutter: $default-grid-gutter--large
+        );
+        margin-bottom: 0;
+
+        &:first-child {
+          // background-color: lightgreen;
+        }
+        &:last-child {
+          // background-color: lightblue;
+        }
+      }
+    }
+  }
+
+  &-two-columns-even-inline {
+    @include flexbox-grid-mixins.grid($gutter: 20px);
+
+    &__grid {
+      // border: 10px solid orange;
+      @extend .abstract-flexbox-grid;
+      @include flexbox-grid-mixins.grid($gutter: 20px);
+
+      @include scss-mixins.for-size(phone-only) {
+        display: grid;
+      }
+
+      @include scss-mixins.for-size(tablet-portrait-up) {
+        display: flex;
+      }
+
+      @include scss-mixins.for-size(tablet-landscape-up) {
+        display: flex;
+      }
+    }
+
+    &__grid-item {
+      &:first-child {
+        @include flexbox-grid-mixins.grid-col($col: 6, $gutter: 0);
+        margin-bottom: 0;
+        position: relative;
+
+        @include scss-mixins.for-size(desktop-up) {
+          @include flexbox-grid-mixins.grid-col($col: 6, $gutter: 20px);
+          margin-bottom: 0;
+          position: relative;
+        }
+      }
+      &:last-child {
+        @include flexbox-grid-mixins.grid-col($col: 6, $gutter: 0);
+        margin-bottom: 0;
+
+        @include scss-mixins.for-size(desktop-up) {
+          @include flexbox-grid-mixins.grid-col($col: 6, $gutter: 20px);
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  // Page include
+  &-acf-field-group-2-flexable-layout-two-columns-page-include {
+    &__grid {
+      // background-color: orange;
+      @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter--small);
+      //display: flex;
+
+      @include scss-mixins.for-size(phone-only) {
+        display: grid;
+        padding: 1rem;
+      }
+
+      @include scss-mixins.for-size(tablet-portrait-up) {
+        display: grid;
+        padding: 2rem;
+      }
+
+      @include scss-mixins.for-size(tablet-landscape-up) {
+        display: flex;
+      }
+
+      @include scss-mixins.for-size(desktop-up) {
+        padding: 0;
+      }
+
+      @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter--small);
+    }
+
+    &__grid-item {
+      flex: 1;
+      margin-bottom: 0;
+
+      &:first-child {
+        // background-color: red;
+        @include flexbox-grid-mixins.grid-col(
+          $col: 5,
+          //$col: 12,
+          $gutter: $default-grid-gutter--small
+        );
+      }
+
+      &:last-child {
+        @include flexbox-grid-mixins.grid-col(
+          $col: 7,
+          //$col: 12,
+          $gutter: $default-grid-gutter--small
+        );
+      }
+    }
+
+    // @include scss-mixins.for-size(big-desktop-up) {
+
+    @include scss-mixins.for-size(big-desktop-up) {
+      &__grid {
+        // background-color: pink;
+        @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter--large);
+        display: flex;
+
+        @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter--large);
+      }
+
+      &__grid-item {
+        flex: 1;
+        margin-bottom: 0;
+
+        &:first-child {
+          // background-color: lightgreen;
+          @include flexbox-grid-mixins.grid-col(
+            $col: 5,
+            $gutter: $default-grid-gutter--large
+          );
+        }
+        &:last-child {
+          // background-color: lightblue;
+          @include flexbox-grid-mixins.grid-col(
+            $col: 7,
+            $gutter: $default-grid-gutter--large
+          );
+        }
+      }
+    }
+  }
+
+  // Page include
+  &-acf-field-group-2-flexable-layout-text-with-right-sidebar {
+    &__grid {
+      // background-color: orange;
+      @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter--small);
+      //display: flex;
+
+      @include scss-mixins.for-size(phone-only) {
+        display: grid;
+        padding: 1rem;
+      }
+
+      @include scss-mixins.for-size(tablet-portrait-up) {
+        display: grid;
+        padding: 2rem;
+      }
+
+      @include scss-mixins.for-size(tablet-landscape-up) {
+        display: flex;
+      }
+
+      @include scss-mixins.for-size(desktop-up) {
+        padding: 0;
+      }
+
+      @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter--small);
+    }
+
+    &__grid-item {
+      flex: 1;
+      margin-bottom: 0;
+
+      &:first-child {
+        // background-color: red;
+        @include flexbox-grid-mixins.grid-col(
+          $col: 8,
+          $gutter: $default-grid-gutter--small
+        );
+      }
+      &:last-child {
+        @include flexbox-grid-mixins.grid-col(
+          $col: 4,
+          $gutter: $default-grid-gutter--small
+        );
+        // background-color: green;
+      }
+    }
+
+    // @include scss-mixins.for-size(big-desktop-up) {
+
+    @include scss-mixins.for-size(big-desktop-up) {
+      &__grid {
+        // background-color: pink;
+        @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter--large);
+        display: flex;
+
+        @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter--large);
+      }
+
+      &__grid-item {
+        flex: 1;
+        margin-bottom: 0;
+
+        &:first-child {
+          // background-color: lightgreen;
+          @include flexbox-grid-mixins.grid-col(
+            $col: 8,
+            $gutter: $default-grid-gutter--large
+          );
+        }
+        &:last-child {
+          // background-color: lightblue;
+          @include flexbox-grid-mixins.grid-col(
+            $col: 4,
+            $gutter: $default-grid-gutter--large
+          );
+        }
+      }
+    }
+  }
+
+  // Page include
+  &-acf-field-group-2-flexable-layout-text-with-right-sidebar-links {
+    &__grid {
+      // background-color: orange;
+      @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter--small);
+      display: flex;
+
+      @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter--small);
+    }
+
+    &__grid-item {
+      flex: 1;
+      margin-bottom: 0;
+
+      &:first-child {
+        // background-color: red;
+        @include flexbox-grid-mixins.grid-col(
+          $col: 9,
+          $gutter: $default-grid-gutter--small
+        );
+      }
+      &:last-child {
+        @include flexbox-grid-mixins.grid-col(
+          $col: 3,
+          $gutter: $default-grid-gutter--small
+        );
+        // background-color: green;
+      }
+    }
+
+    // @include scss-mixins.for-size(big-desktop-up) {
+
+    @include scss-mixins.for-size(big-desktop-up) {
+      &__grid {
+        // background-color: pink;
+        @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter--large);
+        display: flex;
+
+        @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter--large);
+      }
+
+      &__grid-item {
+        flex: 1;
+        margin-bottom: 0;
+
+        &:first-child {
+          // background-color: lightgreen;
+          @include flexbox-grid-mixins.grid-col(
+            $col: 9,
+            $gutter: $default-grid-gutter--large
+          );
+        }
+        &:last-child {
+          // background-color: lightblue;
+          @include flexbox-grid-mixins.grid-col(
+            $col: 3,
+            $gutter: $default-grid-gutter--large
+          );
+        }
+      }
+    }
+  }
+
+  &-two-columns-even__grid-item:last-child {
+    .template-partial-acf-field-group-0-profile-information__profile-information-group-sidebar {
+      margin-top: 20px;
+      @include scss-mixins.for-size(desktop-up) {
+        margin-top: 50px;
+      }
+    }
+  }
+}

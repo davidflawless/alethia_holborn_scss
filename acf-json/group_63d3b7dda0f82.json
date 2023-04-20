@@ -1,0 +1,143 @@
+{
+    "key": "group_63d3b7dda0f82",
+    "title": "Content : Location",
+    "fields": [
+        {
+            "key": "field_63e1231c79891",
+            "label": "Image slider",
+            "name": "image_slider",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 1,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add new image",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_63e1234479892",
+                    "label": "Slide image",
+                    "name": "slide_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_63e1231c79891"
+                }
+            ]
+        },
+        {
+            "key": "field_63d3c1d69babd",
+            "label": "Background colour",
+            "name": "location-section__background_colour",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "The is so any rescaling of the page will show a consistent background in relation to the image",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#3D3935",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_642bdb2f7cba6",
+            "label": "Base image",
+            "name": "image_right",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "This is visible only on Mobile devices",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_642bdb327cba7",
+            "label": "Image overlay",
+            "name": "image_right_overlay",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "This is visible only on Mobile devices",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "213"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1680595910
+}

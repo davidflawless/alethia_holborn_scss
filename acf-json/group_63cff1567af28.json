@@ -1,0 +1,55 @@
+{
+    "key": "group_63cff1567af28",
+    "title": "2* Block : Page colours (Hexadecimal)",
+    "fields": [
+        {
+            "key": "field_63cff156c869e",
+            "label": "Page colours",
+            "name": "block__page_colours",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "#ffffff": "White",
+                "#335525": "Green",
+                "#3D3935": "Grey",
+                "#707070": "Light grey",
+                "#005670": "Blue",
+                "#f6ccd4": "Pink",
+                "#5E2751": "Purple"
+            },
+            "default_value": "grey",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 222,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1677245133
+}

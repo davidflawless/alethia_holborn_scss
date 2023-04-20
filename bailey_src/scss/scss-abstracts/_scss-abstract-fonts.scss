@@ -1,0 +1,50 @@
+/* 
+*
+* ** Demonstration only **
+*
+* fonts
+*/
+// :: Import Typekit font
+@import url("https://use.typekit.net/imk0ejp.css");
+
+.ff-proxima-nova {
+  font-family: "proxima-nova", sans-serif;
+  font-style: normal;
+
+  &__light {
+    @extend .ff-proxima-nova;
+    font-weight: 400;
+  }
+
+  &__heavy {
+    @extend .ff-proxima-nova;
+    font-weight: 700;
+  }
+}
+
+// :: Import Google font
+
+// <link rel="preconnect" href="https://fonts.googleapis.com">
+// <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+// <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+// font-family: 'Libre Baskerville', serif;
+//
+// :: help
+// https://wp-rocket.me/google-core-web-vitals-wordpress/preconnect-to-required-origins/
+
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
+
+.ff-libre-baskerville {
+  font-family: "Libre Baskerville", serif;
+  font-style: normal;
+
+  &__light {
+    @extend .ff-libre-baskerville;
+    font-weight: 400;
+  }
+
+  &__heavy {
+    @extend .ff-libre-baskerville;
+    font-weight: 700;
+  }
+}

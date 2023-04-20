@@ -1,0 +1,14 @@
+// :: SCSS : Footer
+
+@use "../scss-abstracts";
+
+.template-partial-loop-services {
+  &__group {
+    display: flex;
+    justify-content: center;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    max-width: 85%;
+    margin: auto;
+  }
+}

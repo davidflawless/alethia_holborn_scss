@@ -1,0 +1,167 @@
+/* 
+*
+* ** Demonstration only **
+*
+* fonts
+*/
+
+// :: Import mixin form 'node_modules'
+@use "./node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins";
+
+@use "../scss-mixins";
+
+$default-grid-gutter: 100px;
+// $default-grid-gutter-x: 100px;
+.abstract-flexbox-grid {
+  // border: 10px solid blue;
+
+  @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter);
+
+  // :: Variations
+  // :: Text With Right Sidebar
+  &-acf-field-group-2-flexable-layout-text-with-right-sidebar {
+    &__grid {
+      @extend .abstract-flexbox-grid;
+    }
+
+    &__grid-item {
+      &:first-child {
+        // border: 10px solid red;
+        @include flexbox-grid-mixins.grid-col(
+          $col: 9,
+          $gutter: $default-grid-gutter
+        );
+      }
+      &:last-child {
+        // background-color: lightgreen;
+        @include flexbox-grid-mixins.grid-col(
+          $col: 3,
+          $gutter: $default-grid-gutter
+        );
+      }
+    }
+  }
+  // :: Two Columns
+  &-acf-field-group-2-flexable-layout-two-columns-content,
+  &-acf-field-group-2-flexable-layout-two-columns-ctas,
+  &-two-columns-even {
+    &__grid {
+      // border: 10px solid orange;
+      @extend .abstract-flexbox-grid;
+      display: flex;
+    }
+
+    &__grid-item {
+      flex: 1;
+      // background-color: aquamarine;
+      &:first-child {
+        // border: 10px solid blue;
+        // background-color: lightgreen;
+        @include flexbox-grid-mixins.grid-col(
+          $col: 6,
+          $gutter: $default-grid-gutter
+        );
+        margin-bottom: 0;
+      }
+      &:last-child {
+        // background-color: lightblue;
+        // border: 10px solid green;
+        @include flexbox-grid-mixins.grid-col(
+          $col: 6,
+          $gutter: $default-grid-gutter
+        );
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // :: Two Columns - inline
+
+  &-two-columns-even-inline {
+    @include flexbox-grid-mixins.grid($gutter: 20px);
+
+    &__grid {
+      // border: 10px solid orange;
+      @extend .abstract-flexbox-grid;
+      @include flexbox-grid-mixins.grid($gutter: 20px);
+    }
+
+    &__grid-item {
+      display: flex;
+      position: relative;
+      > * {
+        flex: 1;
+      }
+      &:first-child {
+        // border: 10px solid blue;
+        // background-color: green;
+        @include flexbox-grid-mixins.grid-col($col: 6, $gutter: 20px);
+        margin-bottom: 0;
+      }
+      &:last-child {
+        // background-color: lightgreen;
+        // border: 10px solid green;
+        @include flexbox-grid-mixins.grid-col($col: 6, $gutter: 20px);
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // Talk To Us About Your Case
+  &-acf-field-group-2-flexable-layout-talk-to-us-about-your-case {
+    &__grid {
+      @extend .abstract-flexbox-grid;
+    }
+
+    &__grid-item {
+      &:first-child {
+        // border: 10px solid red;
+        @include flexbox-grid-mixins.grid-col(
+          $col: 6,
+          $gutter: $default-grid-gutter
+        );
+        margin-bottom: 0;
+      }
+      &:last-child {
+        // background-color: lightgreen;
+        @include flexbox-grid-mixins.grid-col(
+          $col: 6,
+          $gutter: $default-grid-gutter
+        );
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // Two Columns Page Include
+  &-acf-field-group-2-flexable-layout-two-columns-page-include {
+    &__grid {
+      // border: 10px solid orange;
+      @extend .abstract-flexbox-grid;
+      display: flex;
+    }
+
+    &__grid-item {
+      flex: 1;
+      // background-color: aquamarine;
+      &:first-child {
+        // border: 10px solid blue;
+        // background-color: lightgreen;
+        @include flexbox-grid-mixins.grid-col(
+          $col: 5,
+          $gutter: $default-grid-gutter
+        );
+        margin-bottom: 0;
+      }
+      &:last-child {
+        // background-color: lightblue;
+        // border: 10px solid green;
+        @include flexbox-grid-mixins.grid-col(
+          $col: 7,
+          $gutter: $default-grid-gutter
+        );
+        margin-bottom: 0;
+      }
+    }
+  }
+}

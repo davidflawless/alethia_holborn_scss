@@ -1,0 +1,20 @@
+
+@use "./scss-mixins";
+
+.acf-field-group-2-flexable-layout-full-width-text {
+    &__group {
+        
+        // border: 10px solid black;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        padding: 1rem;
+
+        @include scss-mixins.for-size(tablet-portrait-up) {
+            padding: 2rem;
+        }
+
+    }
+}

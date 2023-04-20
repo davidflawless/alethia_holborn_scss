@@ -1,0 +1,141 @@
+<?php
+/**
+	* Template Name: Page - Location
+*/
+?>
+
+<?php
+    
+    // $body_image     = get_field('body_image');
+    // $body_image_url = get_field('body_image')['url'];
+
+    $image_slider           = get_field('image_slider');
+    $section_bg_colour      = get_field('location-section__background_colour');
+
+    $base_image_url         = get_field('image_right')['url'];
+    $base_image_overlay     = get_field('image_right_overlay');
+
+    //my_print_r($image_slider);
+    //my_print_r($background_colour);
+
+    $loading        = 'eager';
+    $img_desktop    = 'side_img_large';
+    $img_tablet     = 'large';
+    $img_mobile     = 'large';
+?>
+
+<?php get_header(); ?>
+
+
+<div id="page-location" class="container-fluid container__pos22">
+
+    <div class="row">
+
+        <div class="col-12 col-lg-8 col-xxl-9 px-0">
+    
+            <!-- Carousel -->
+            <div id="location-slider" class="carousel slide carousel-fade" data-bs-ride="carousel" data-interval="90000">
+
+
+                <!-- The slideshow/carousel -->
+                <div class="carousel-inner">
+
+                    <?php 
+                    $x=0;
+                    foreach ($image_slider as $image) {?>
+                
+                
+                        <div class="carousel-item <?php if ($x === 0) { echo 'active'; } ?>">
+
+                                <div class="d-block d-md-none">
+                                    <?php
+                                    img_display(
+                                        $loading,
+                                        $img_mobile,
+                                        $image['slide_image']
+                                    );
+                                    ?>
+                                </div>
+
+                                <div class="d-none d-md-block d-lg-none">
+                                    <?php
+                                    img_display(
+                                        $loading,
+                                        $img_tablet,
+                                        $image['slide_image']
+                                    );
+                                    ?>
+                                </div>
+
+                                <div class="d-none d-lg-block body-image" style="background-image: url(<?= $image['slide_image']['url']; ?>); background-color: <?= $section_bg_colour; ?>;"></div>
+                        </div>
+                    <?php 
+                    $x++;
+                    } ?>
+                </div>
+            </div>
+        </div>
+    
+    
+        <div class="col-12 col-lg-4 col-xxl-3 px-xl-4 location-details">
+
+            <div class="location-details__pos">
+
+                <?php
+                if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                        <div class="entry-content">
+                            <?php the_content(); ?>			
+                        </div>     
+                    </article> <?php
+                endwhile; 
+                ?>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+
+        <div class="col-12 d-xl-none img-right" style="background-image: url(<?= $base_image_url; ?>)">
+
+            <div class="img-right__overlay-pos">
+                
+                <div class="d-block d-lg-none">
+                    <?php
+                    img_display(
+                        $loading,
+                        $img_mobile,
+                        $base_image_overlay
+                    );
+                    ?>
+                </div>
+
+                <div class="d-none d-lg-block d-xl-none">
+                    <?php
+                    img_display(
+                        $loading,
+                        $img_tablet,
+                        $base_image_overlay
+                    );
+                    ?>
+                </div>
+
+                <div class="d-none d-xl-block">
+                    <?php
+                    img_display(
+                        $loading,
+                        $img_desktop,
+                        $base_image_overlay
+                    );
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<?php get_footer(); ?>

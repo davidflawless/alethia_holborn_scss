@@ -1,0 +1,23 @@
+@use "../scss-mixins";
+
+.template-partial-acf-field-group-0-hero {
+  // background-image: url(../images/bgd-acf-field-group-0-hero-@2x.png);
+  background-image: url(../images/bgd-hero-xl.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #01122f;
+
+  //   margin-bottom: 50px;
+
+  //   @include scss-mixins.for-size(desktop-up) {
+  //     margin-bottom: 100px;
+  //   }
+
+  &__group {
+    height: 314px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

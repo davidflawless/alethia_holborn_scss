@@ -1,0 +1,69 @@
+@use "../scss-mixins";
+// @use "../scss-abstracts";
+
+body {
+  padding-top: 91px;
+  position: relative;
+  @include scss-mixins.for-size(desktop-up) {
+    padding-top: 130px;
+  }
+}
+.scaffolding {
+  display: flex;
+  flex-direction: column;
+
+  &-container {
+    @extend .scaffolding;
+    // border: 10px solid orange;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border: 10px solid blue;
+    width: 100%;
+
+    //max-width: 100%;
+  }
+
+  &-row {
+    @extend .scaffolding;
+    //border: 10px solid pink;
+    display: flex;
+    width: 100%;
+    padding: 0 30px;
+    max-width: 1400px;
+    flex: 1;
+    box-sizing: border-box;
+    @include scss-mixins.for-size(big-desktop-up) {
+      // margin: 0 130px;
+      padding: 0;
+    }
+
+    > div {
+      padding-top: 50px;
+      padding-bottom: 50px;
+
+      &.scaffolding-row-nopadding {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      &.scaffolding-row-padding-top-none {
+        padding-top: 0;
+        // padding-bottom: 0;
+        // background-color: orange;
+      }
+
+      &.padding-extend-top-bottom {
+        @include scss-mixins.for-size(desktop-up) {
+          padding-top: 0;
+          padding-bottom: 75px;
+        }
+      }
+    }
+  }
+}
+
+pre {
+  //border: 10px solid red;
+}

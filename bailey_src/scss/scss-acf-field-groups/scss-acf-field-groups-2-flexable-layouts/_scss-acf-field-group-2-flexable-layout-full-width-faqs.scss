@@ -1,0 +1,50 @@
+@use "./scss-abstracts";
+@use "./scss-mixins";
+
+.acf-field-group-2-flexable-layout-full-width-faqs {
+    background-color: scss-abstracts.$scss-abstract-color-light-grey;
+
+    margin-bottom: 50px;
+    padding: 2rem;
+
+    @include scss-mixins.for-size(desktop-up) {
+        margin-bottom: 75px;
+        padding: 0;
+    }
+
+  &__group {
+    // border: 10px solid black;
+  }
+
+  &__question {
+
+    padding: 40px 0;
+
+    @include scss-mixins.for-size(desktop-up) {
+        padding: 60px 0 40px;
+    }
+
+    &:first-child {
+        padding-top: 0;
+    }
+    
+  }
+
+  &__question {
+    // background-color: orange;
+    position: relative;
+  }
+
+  &__answer {
+    // background-color: yellow;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.25s;
+  }
+
+  &__answer-group {
+    // background-color: pink;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+}

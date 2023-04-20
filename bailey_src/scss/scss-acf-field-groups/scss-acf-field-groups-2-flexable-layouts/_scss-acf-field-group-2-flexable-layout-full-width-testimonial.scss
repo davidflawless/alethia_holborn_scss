@@ -1,0 +1,108 @@
+@use "./scss-mixins";
+@use "./scss-abstracts";
+
+.acf-field-group-2-flexable-layout-full-width-testimonial {
+    position: relative;
+    background-color: #8d1919;
+    margin-bottom: 50px;
+
+    &__background-image {
+        position: absolute;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+    }
+    &__group {
+        
+        position: relative;
+        padding-left: 40px;
+        padding-right: 40px;
+        @include scss-mixins.for-size(desktop-up) {
+            padding-right: 0;
+        }
+    }
+
+    &__testimonial-meta {
+        position: relative;
+
+        // Left border
+        &:before {
+
+            @include scss-mixins.for-size(desktop-up) {
+                content: "";
+                background-color: #fff;
+                width: 4px;
+                height: 100%;
+                position: absolute;
+                display: block;
+                left: -40px;
+                top: 0;
+            }
+        }
+    }
+
+    &__star-rating-group p {
+        display: flex;
+    }
+
+
+    &__star {
+        @include scss-mixins.font-size__line-height(24, 16);
+        width: 20px;
+        height: 20px;
+        margin-right: 6px;
+
+        // display: inline-block;
+        &:after {
+        content: "\2605";
+        display: block;
+        position: relative;
+        width: inherit;
+        height: inherit;
+        color: scss-abstracts.$scss-abstract-color-star-gold;
+        // transform: rotate(180deg);
+        // content: “\25C0 \FE0E”;
+        }
+        // position: relative;
+
+        // display: inline-block;
+        // width: 0;
+        // height: 0;
+
+        // margin-left: 0.9rem;
+        // margin-right: 0.1rem;
+
+        // border-right: 0.3rem solid transparent;
+        // border-bottom: 0.7rem solid scss-abstracts.$color-star-gold;
+        // border-left: 0.3rem solid transparent;
+
+        // /* Controlls the size of the stars. */
+        // font-size: 12px;
+
+        // &:before,
+        // &:after {
+        //   content: "";
+
+        //   display: block;
+        //   width: 0;
+        //   height: 0;
+
+        //   position: absolute;
+        //   top: 0.6em;
+        //   left: -1em;
+
+        //   border-right: 1em solid transparent;
+        //   border-bottom: 0.7em solid #fc0;
+        //   border-left: 1em solid transparent;
+
+        //   transform: rotate(-35deg);
+        // }
+
+        // &:after {
+        //   transform: rotate(35deg);
+        // }
+    }
+}
+.acf-field-group-2-flexable-layout-talk-to-us-about-your-case__testimonial-meta {
+  //   border: 10px solid orange;
+}

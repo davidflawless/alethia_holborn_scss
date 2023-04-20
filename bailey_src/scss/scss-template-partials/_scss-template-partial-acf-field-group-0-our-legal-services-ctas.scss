@@ -1,0 +1,105 @@
+@use "./scss-abstracts";
+@use "./scss-mixins";
+
+.template-partial-acf-field-group-0-our-legal-services-ctas {
+  &__group {
+    // height: 414px;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+  }
+
+  &__grid {
+    // border: 10px solid red;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+
+    padding: 1rem;
+
+    
+    @include scss-mixins.for-size(tablet-portrait-up) {
+
+        grid-template-columns: repeat(2, 1fr);
+        //grid-template-rows: repeat(2, 1fr);
+        padding: 2rem;
+
+    }
+
+    @include scss-mixins.for-size(tablet-landscape-up) {
+
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+    }
+        
+    
+    @include scss-mixins.for-size(big-desktop-up) {
+
+        grid-column-gap: 80px;
+        grid-row-gap: 80px;
+
+        padding: 0;
+    }
+
+
+
+
+    * {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+
+  &__grid-item {
+    // background-image: url(../images/bgd-acf-field-group-0-hero-@2x.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    // background-color: #01122f;
+    background-color: scss-abstracts.$scss-abstract-color-emerald;
+
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    position: relative;
+
+    &:hover {
+      text-decoration: none;
+
+      .template-partial-acf-field-group-0-our-legal-services-ctas {
+        &__cta-link {
+          color: scss-abstracts.$scss-abstract-color-olive;
+        }
+      }
+    }
+  }
+  &__grid-item-bgd-group {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: .17;
+    background-size: cover;
+  }
+
+  &__grid-item-link-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 100;
+    // background-color: pink;
+  }
+
+  &__cta-text {
+    margin-bottom: 40px;
+  }
+
+  &__cta-link-group {
+    margin-top: auto;
+  }
+}

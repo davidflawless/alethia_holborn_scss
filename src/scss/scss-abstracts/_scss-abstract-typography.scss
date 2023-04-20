@@ -1,0 +1,101 @@
+@use './scss-mixins';
+@use './scss-abstracts';
+
+body {
+    @extend .ff-montserrat;
+	font-size: 1rem;
+	font-weight: 400;    
+  @include scss-mixins.font-size__line-height(16, 24);
+
+}
+
+
+    // @include scss-mixins.for-size(tablet-landscape-up) {      // min-width: 900px
+
+    // }
+
+// wysiwyg standardisation
+// -----------------------
+
+//:: Base Exstensions
+
+.ext-abstract-typography-htags__large {
+  h1,
+  h2,
+  h3 {
+    @include scss-mixins.font-size__line-height(28, 40);    
+    margin-bottom: 1rem;
+  }
+}
+
+.ext-abstract-typography-htags__small {
+  h4,
+  h5,
+  h6 {
+    @include scss-mixins.font-size__line-height(28, 40);    
+    margin-bottom: 1rem;
+  }
+}
+
+.abstract-typography-wysiwyg-editor-standard {
+
+  display: flex;
+  flex-direction: column;
+
+  @extend .ext-abstract-typography-htags__large;     
+  
+  @extend .ext-abstract-typography-htags__small;     
+
+  ul {
+    list-style-type: disc;
+    margin-left: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  ol {
+    li {
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  // :: Variations
+  // -------------
+  &--white{
+    @extend .abstract-typography-wysiwyg-editor-standard;
+    color:#fff;
+  }
+
+  .strap-line{
+      color: scss-abstracts.$brand-yellow;
+      @include scss-mixins.font-size__line-height(20, 26);    
+  }
+}
+
+// links
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: color .25s;
+
+  &:hover{
+    color: scss-abstracts.$brand-yellow;
+  }
+}
+
+// Lists
+
+.abstract-typography-list{
+
+  // :: Variations
+  // -------------
+  &__contact-us{
+    &-list{
+      margin-bottom: 2rem;
+      &-item{
+        color: #fff;
+      }
+    }
+
+  }
+}
+

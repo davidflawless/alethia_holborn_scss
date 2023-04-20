@@ -1,0 +1,39 @@
+// :: SCSS : Header
+
+@use "../scss-mixins";
+@use "../scss-abstracts";
+// @use "node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins";
+
+header,
+.template-partial-header {
+  // background-color: scss-abstracts.$scss-abstract-color-generic-yellow;
+  // border: 10px solid red;
+  position: fixed;
+  display: flex;
+  top: 0;
+  width: 100%;
+  background: white;
+  z-index: 200;
+  @include scss-mixins.for-size(desktop-up) {
+    height: 130px;
+  }
+
+  .skip-link {
+    display: none;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+
+    @include scss-mixins.for-size(desktop-up) {
+      flex-direction: row;
+      padding-top: 20px !important;
+      padding-bottom: 20px !important;
+    }
+  }
+}

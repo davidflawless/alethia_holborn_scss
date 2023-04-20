@@ -1,0 +1,31 @@
+@use "./scss-mixins";
+// :: SCSS : Header
+.template-partial-header {
+  &__site-logo {
+    width: 111px;
+
+    // margin: auto;
+    // margin-bottom: 8px;
+    @include scss-mixins.for-size(desktop-up) {
+      margin-right: 3%;
+      // margin-bottom: 0;
+    }
+
+    * {
+      max-width: 111px;
+      width: 111px;
+      height: auto;
+      @include scss-mixins.for-size(desktop-up) {
+        max-width: 139px;
+        width: 139px;
+      }
+    }
+  }
+
+  &__site-branding {
+    // border: 10px solid orange;
+    display: none;
+    &-title {
+    }
+  }
+}

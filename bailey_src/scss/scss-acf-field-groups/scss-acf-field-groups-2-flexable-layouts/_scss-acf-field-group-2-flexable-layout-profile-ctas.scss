@@ -1,0 +1,48 @@
+// @use "./scss-abstracts";
+@use "./scss-mixins";
+
+.acf-field-group-2-flexable-layout-profile-ctas {
+  &__group {
+    // border: 10px solid black;
+  }
+  &__grid {
+    // border: 10px solid red;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+
+    @include scss-mixins.for-size(tablet-portrait-up) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+    }
+
+    @include scss-mixins.for-size(tablet-landscape-up) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+    }
+
+    @include scss-mixins.for-size(big-desktop-up) {
+      grid-column-gap: 80px;
+      grid-row-gap: 80px;
+    }
+
+    * {
+      text-decoration: none;
+      // color: #fff;
+    }
+  }
+
+  &__grid-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__grid-item-link-group {
+    display: flex;
+    flex-direction: column;
+    // background-color: pink;
+    margin-left: 20px;
+  }
+}

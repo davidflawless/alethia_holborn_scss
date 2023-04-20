@@ -1,0 +1,44 @@
+// :: SCSS : Header
+@use "../scss-abstracts";
+@use "../scss-mixins";
+
+.template-partial-header {
+  &__navigation-primary-sibling {
+    &-group {
+      margin-top: auto;
+      width: 20%;
+      right: 0;
+      margin-left: 3%;
+      display: none;
+      @include scss-mixins.for-size(desktop-up) {
+        display: flex;
+      }
+    }
+
+    &-container {
+      // border: 10px solid orange;
+    }
+
+    &-list {
+      // border: 10px solid lightblue;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      gap: 20px;
+
+      @include scss-mixins.for-size(desktop-up) {
+        flex-direction: row;
+      }
+
+      .menu-item {
+        white-space: nowrap;
+        * {
+          text-decoration: none;
+          color: scss-abstracts.$scss-abstract-color-burgandy;
+          @extend .ff-libre-baskerville__light;
+          @include scss-mixins.font-size__line-height(14, 24);
+        }
+      }
+    }
+  }
+}

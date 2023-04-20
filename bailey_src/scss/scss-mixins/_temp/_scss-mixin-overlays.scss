@@ -1,0 +1,20 @@
+/**
+*
+* use : 
+*
+* @use "../scss-mixins";
+*
+* .overlay {
+*   @include scss-mixins.mixin-overlay(#000, 0.2);
+* }
+*
+*/
+
+@mixin mixin-overlay($color, $opacity) {
+  opacity: $opacity;
+  height: 100%;
+  width: 100%;
+  background-color: $color;
+  position: absolute;
+  z-index: 1;
+}

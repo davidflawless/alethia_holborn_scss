@@ -1,0 +1,91 @@
+<?php
+/**
+	* Template Name: Page - History
+*/
+?>
+
+
+<?php
+
+$image_left_url         = get_field('image_left')['url'];
+$image_right_url        = get_field('image_right')['url'];
+$image_right_overlay    = get_field('image_right_overlay');
+
+$loading        = 'eager';
+$img_desktop    = 'large';
+$img_tablet     = 'medium';
+$img_mobile     = 'medium';
+
+//my_print_r($image_left);
+?>
+
+
+<?php get_header(); ?>
+
+<div id="page-history" class="container-fluid">
+
+    <div class="row justify-content-center">
+
+        <div class="col-12 col-xl-9 col-xxl-8 ps-xl-0 img-left" style="background-image: url(<?= $image_left_url; ?>)">
+    
+            <div class="row history-text__pos">
+
+                <div class="col-12 offset-lg-4 col-lg-6 offset-xl-5 col-xl-6 offset-xxl-4 col-xxl-5">
+
+                    <div class="history-text">
+                        <?php
+                        if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+                            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                                <div class="entry-content">
+                                    <?php the_content(); ?>			
+                                </div>     
+                            </article> <?php
+                        endwhile; 
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-xl-3 col-xxl-4 pe-xl-0 img-right" style="background-image: url(<?= $image_right_url; ?>)">
+    
+            <div class="img-right__overlay-pos">
+                <div class="d-block d-lg-none">
+                    <?php
+                    img_display(
+                        $loading,
+                        $img_mobile,
+                        $image_right_overlay
+                    );
+                    ?>
+                </div>
+
+                <div class="d-none d-lg-block d-xl-none">
+                    <?php
+                    img_display(
+                        $loading,
+                        $img_tablet,
+                        $image_right_overlay
+                    );
+                    ?>
+                </div>
+
+                <div class="d-none d-xl-block">
+                    <?php
+                    img_display(
+                        $loading,
+                        $img_desktop,
+                        $image_right_overlay
+                    );
+                    ?>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+</div>
+
+
+
+
+<?php get_footer(); ?>

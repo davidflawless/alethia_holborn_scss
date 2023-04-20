@@ -1,0 +1,122 @@
+/* 
+*
+* ** Demonstration only **
+*
+* Images and brand styling
+*/
+@use "./scss-abstracts";
+@use "./scss-mixins";
+
+.abstract-images {
+  &__keyline-image-group {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+
+    &:before {
+      content: "";
+      border: 1px solid scss-abstracts.$scss-abstract-color-dark-grey;
+      width: 100%;
+      height: 100%;
+      margin-left: -10px;
+      margin-top: -10px;
+      position: absolute;
+      z-index: 0;
+    }
+  }
+
+  &__keyline-image-group {
+    @extend .abstract-images__keyline-image-group;
+    // width: 100%;
+    // margin-bottom: 1rem;
+    &-footer {
+      position: absolute;
+      bottom: -61px;
+      z-index: 100;
+      // top: 22px;
+      .abstract-images-icon {
+        @include scss-mixins.for-size(desktop-up) {
+          width: 41px;
+        }
+      }
+    }
+  }
+
+  &__post-image-group {
+    &-profile-image {
+      display: flex;
+      width: 100%;
+      // padding-top: 10px;
+      // padding-bottom: 10px;
+      position: relative;
+      background-color: scss-abstracts.$scss-abstract-color-light-grey;
+      //
+      // padding-top: 10px;
+      // padding-bottom: 10px;
+
+      * {
+        @extend .abstract-images__post-image-group;
+        // max-width: 75%;
+        // margin: auto;
+        width: 100%;
+        height: auto;
+      }
+    }
+    &-placeholder-image {
+      display: flex;
+      width: 100%;
+      position: relative;
+      // padding: 40px 40px;
+      background-color: scss-abstracts.$scss-abstract-color-light-grey;
+
+      * {
+        @extend .abstract-images__post-image-group;
+        // max-width: 75%;
+        // margin: auto;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__keyline-image-group-with-margin-bottom {
+    @extend .abstract-images__keyline-image-group;
+    // width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  &__keyline-image {
+    width: inherit;
+    height: auto;
+    z-index: 1;
+  }
+
+  &-icon-label-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &-icon-group {
+    width: 45px;
+    height: 45px;
+    background-color: scss-abstracts.$scss-abstract-color-burgandy;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-icon-group-link {
+    height: 100%;
+    display: flex;
+  }
+
+  &-icon {
+    width: 28px;
+    height: auto;
+    // background-color: scss-abstracts.$scss-abstract-color-burgandy;
+    // border-radius: 10px;
+  }
+}

@@ -1,0 +1,116 @@
+<?php
+/**
+	* Template Name: Page - Vision
+*/
+?>
+
+
+<?php
+    $side_logo      = get_field('side_logo');
+
+    //my_print_r($side_logo);
+
+    $loading        = 'eager';
+    $img_desktop    = 'large';
+    $img_tablet     = 'medium';
+    $img_mobile     = 'medium';
+
+    $image_right_url        = get_field('image_right')['url'];
+    $image_right_overlay    = get_field('image_right_overlay');
+
+    $vision__text_block_1 = get_field('vision__text_block_1')['c__text_wysiwyg'];
+    $vision__text_block_2 = get_field('vision__text_block_2')['c__text_wysiwyg'];
+
+    $vision__image_separator_url        = get_field('vision__image_separator')['url'];
+
+    //my_print_r($vision__image_separator_url);
+?>
+
+
+<?php get_header(); ?> 
+
+
+
+<div id="page-vision" class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-12 col-lg-8 col-xl-5 col-xxl-5 px-lg-5">
+
+            <div class="contact-details__pos">
+
+                <?php
+                if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                        <div class="entry-content">
+                            <?php the_content(); ?>			
+                        </div>     
+                    </article> <?php
+                endwhile; 
+                ?>   
+                
+                <div class="d-none d-xl-block">
+                    <?= $vision__text_block_1; ?>
+
+                    <?= $vision__text_block_2; ?>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-12 col-xl-7a offset-xl-3 col-xl-4 position-relative img-right" style="background-image: url(<?= $image_right_url; ?>)">
+
+            <div class="img-right__overlay-pos">
+                <div class="d-block d-lg-none">
+                    <?php
+                    img_display(
+                        $loading,
+                        $img_mobile,
+                        $image_right_overlay
+                    );
+                    ?>
+                </div>
+
+                <div class="d-none d-lg-block d-xl-none">
+                    <?php
+                    img_display(
+                        $loading,
+                        $img_tablet,
+                        $image_right_overlay
+                    );
+                    ?>
+                </div>
+
+                <div class="d-none d-xl-block">
+                    <?php
+                    img_display(
+                        $loading,
+                        $img_desktop,
+                        $image_right_overlay
+                    );
+                    ?>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-12 d-block d-xl-none additional__text-block">
+            <?= $vision__text_block_1; ?>
+        </div>
+
+
+        <div class="col-12 px-0 d-block d-xl-none img-separator" style="background-image: url( <?= $vision__image_separator_url; ?>)"></div>
+
+
+        <div class="col-12 d-block d-xl-none additional__text-block">
+            <?= $vision__text_block_2; ?>
+        </div>
+
+    </div>
+    
+</div>
+
+<?php get_footer(); ?>

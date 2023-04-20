@@ -1,0 +1,96 @@
+// :: SCSS : Footer
+
+@use "./scss-abstracts";
+@use "./scss-mixins";
+
+.template-partial-footer {
+  // border: 10px solid blue;
+  background-color: scss-abstracts.$scss-abstract-color-emerald;
+
+  &__body {
+    //border: 1px solid lightgreen;
+    // background-color: lightgreen;
+  }
+  &__body-group {
+    display: flex;
+    // justify-content: space-between;
+    // display: grid;
+    // grid-template-columns: repeat(1, 1fr);
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: -30px;
+    // padding: 0 1rem;
+
+    @include scss-mixins.for-size(tablet-landscape-up) {
+      justify-content: space-between;
+      display: flex;
+      flex-direction: row;
+    }
+
+    @include scss-mixins.for-size(desktop-up) {
+      flex-wrap: nowrap;
+      padding: 0;
+      justify-content: space-between;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__body-contact-us {
+    //border: 2px solid yellow;
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    @include scss-mixins.for-size(tablet-landscape-up) {
+      display: flex;
+      flex-direction: column;
+      width: 20%;
+      margin-right: 4rem;
+    }
+
+    // @include scss-mixins.for-size(desktop-up) {
+    //     margin-right: 4rem;
+    // }
+
+    &-title {
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    &-text {
+      // border: 10px solid blue;
+
+      * {
+        @include scss-mixins.font-size__line-height(10, 12);
+        color: #fff;
+        // text-decoration: none;
+      }
+    }
+    &-links {
+      * {
+        @include scss-mixins.font-size__line-height(16, 18);
+        color: #fff;
+        text-decoration: none;
+      }
+      margin-bottom: 2rem;
+    }
+    &-button {
+      border: 1px solid #fff;
+      @extend .ff-libre-baskerville__light;
+      @include scss-mixins.font-size__line-height(16, 18);
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    // @extend .ff-libre-baskerville__light;
+  }
+
+  &-logo {
+    height: 90px;
+    margin-right: 20px;
+    margin-right: 0;
+    height: 70px;
+    position: relative;
+  }
+}

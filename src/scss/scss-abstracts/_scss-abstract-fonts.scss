@@ -1,0 +1,46 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+
+
+.ff-montserrat {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal; // 400
+
+    &-300{
+        @extend .ff-montserrat;
+        font-weight: 300;
+    }
+
+    &-400{
+        @extend .ff-montserrat;
+        font-weight: 400;        
+    }  
+    
+    &-500{
+        @extend .ff-montserrat;
+        font-weight: 500;        
+    }  
+    
+    &-600{
+        @extend .ff-montserrat;
+        font-weight: 600;        
+    }  
+    
+    &-700{
+        @extend .ff-montserrat;
+        font-weight: 700;        
+    }      
+
+//   &__light {
+//     @extend .ff-proxima-nova;
+//     font-weight: 400;
+//   }
+
+//   &__heavy {
+//     @extend .ff-proxima-nova;
+//     font-weight: 700;
+//   }
+}
+
+

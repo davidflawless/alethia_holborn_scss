@@ -1,0 +1,79 @@
+<?php
+/**
+	* Template Name: Page - Home
+*/
+
+
+	$pageid 	    = get_the_ID();
+    //$var__site_id   = get_current_blog_id();
+    //$blog_id        = 1;
+	$siteurl 	    = site_url();
+	$themeurl       = get_template_directory_uri();
+    // $network_url    = network_home_url();
+    //$network_url    = 'https://web-dev.rayner.com/hub/';
+
+
+    $outer_img   = get_field('home-content__animated_graphic_1',$pageid)['c__single_image'];
+    $inner_img   = get_field('home-content__animated_graphic_2',$pageid)['c__single_image'];
+    $centre_img  = get_field('home-content__centre_graphic_3',$pageid)['c__single_image'];
+
+    $loading        = 'eager';
+    $img_desktop    = 'large';
+    $img_675        = 'img_675';
+    $img_medium     = 'medium';
+    
+
+    //my_print_r($outer_img);
+?>
+
+<?php get_header(); ?>
+
+<section id="front-page" class="container-fluid">
+
+    <div class="row justify-content-center22">
+        
+        <div class="col-12 col-md px-0">
+
+            <div class="front-page__site-logo">
+
+                <div class="front-page__outer-img">
+                    <img 
+                    src="<?= $outer_img['url']; ?>"
+                    width="100%" 
+                    height="auto"
+                    alt="<?= $outer_img['alt']; ?>"
+                    title="<?= $outer_img['title']; ?>" 
+                    longdesc="<?= $outer_img['description']; ?>"
+                    >
+
+                </div>
+
+                <div class="front-page__inner-img">
+                    <img 
+                    src="<?= $inner_img['url']; ?>"
+                    width="100%" 
+                    height="auto"
+                    alt="<?= $inner_img['alt']; ?>"
+                    title="<?= $$inner_img['title']; ?>" 
+                    longdesc="<?= $inner_img['description']; ?>"
+                    >
+                </div>
+
+                <div class="front-page__centre-img">
+                    <img 
+                    src="<?= $centre_img['url']; ?>"
+                    width="100%" 
+                    height="auto"
+                    alt="<?= $centre_img['alt']; ?>"
+                    title="<?= $centre_img['title']; ?>" 
+                    longdesc="<?= $centre_img['description']; ?>"
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+        
+</section>
+
+
+<?php get_footer(); ?>

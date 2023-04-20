@@ -1,0 +1,86 @@
+// :: Font size, line height and rhythm SASS mixins
+//
+// Reference : https://codepen.io/vajkri/pen/QwvLgg
+//
+// h1 {
+//    @include rhythm(32, 38);
+// }
+//
+
+//@use "../scss-mixins";
+
+@mixin font-size($sizeValue: 12) {
+  font-size: $sizeValue + px; //fallback for old browsers
+  font-size: (0.0625 * $sizeValue) + rem;
+}
+
+@mixin line-height($heightValue: 20) {
+  line-height: $heightValue + px; //fallback for old browsers
+  line-height: (0.0625 * $heightValue) + rem;
+}
+
+@mixin font-size__line-height($sizeValue: 12, $heightValue: 20) {
+  @include font-size($sizeValue);
+  @include line-height($heightValue);
+}
+
+//  :: H tags
+
+// https://stackoverflow.com/questions/7539125/can-i-target-all-h-tags-with-a-single-selector
+// https://sass-lang.com/documentation/at-rules/extend
+// h1, h2, h3,
+// h4, h5, h6 {
+//     @extend %headings !optional;
+// }
+
+@mixin mixin-typography-htags {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @content;
+    margin-bottom: 1rem;
+  }
+}
+
+@mixin mixin-typography-htags__link-no-margin {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @content;
+    margin-bottom: 0;
+  }
+}
+
+@mixin mixin-typography-htags__large {
+  h1,
+  h2,
+  h3 {
+    @content;
+    margin-bottom: 1rem;
+
+    
+  }
+}
+
+@mixin mixin-typography-htags__small {
+  h4,
+  h5,
+  h6 {
+    @content;
+    margin-bottom: 1rem;
+    line-height: 25px
+  }
+}
+
+@mixin mixin-typography-htags-posts {
+  h2 {
+    @content;
+    margin-bottom: 0.5rem;
+  }
+}

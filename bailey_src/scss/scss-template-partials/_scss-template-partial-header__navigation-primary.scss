@@ -1,0 +1,226 @@
+// :: SCSS : Header
+@use "../scss-abstracts";
+@use "../scss-mixins";
+
+.template-partial-header {
+  &__menu-open {
+    &:before {
+      content: "";
+      width: 100%;
+      height: 414px;
+      position: absolute;
+      left: 0;
+      top: 130px;
+      background-image: url(../images/bgd-hero-xl.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: #01122f;
+    }
+  }
+
+  &__navigation-primary {
+    &-group {
+      flex-grow: 1;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: hidden;
+      height: 0;
+      transition: height 0.5s;
+      max-height: 615px;
+      overflow-y: scroll;
+      @include scss-mixins.for-size(desktop-up) {
+        height: auto;
+        overflow: visible;
+        margin-top: auto;
+        margin-left: initial;
+        margin-right: initial;
+        max-width: initial;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @include scss-mixins.for-size(desktop-up) {
+        flex-direction: row;
+      }
+
+      // All menu items
+      .menu-item {
+        width: 100%;
+        max-width: 285px;
+        margin: auto;
+        white-space: nowrap;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        @include scss-mixins.for-size(desktop-up) {
+          width: initial;
+          display: inline-block;
+        }
+
+        &.mobile-home-index {
+          @include scss-mixins.for-size(desktop-up) {
+            display: none;
+          }
+        }
+
+        // Add navigation arrow icon
+        &-has-children {
+          &:after {
+            align-items: center;
+            justify-items: center;
+            text-align: center;
+            content: "\203A";
+            color: #000;
+            right: 0;
+            height: 40px;
+            position: absolute;
+            top: 3px;
+            background-color: #fff;
+            @include scss-mixins.font-size__line-height(30, 32);
+            display: flex;
+            justify-items: center;
+            flex-direction: row;
+            display: block;
+            @include scss-mixins.for-size(desktop-up) {
+              display: none;
+            }
+          }
+        }
+
+        a {
+          text-decoration: none;
+          color: #000;
+          @extend .ff-libre-baskerville__light;
+          @include scss-mixins.font-size__line-height(14, 24);
+          padding-top: 10px;
+          padding-bottom: 10px;
+          display: flex;
+          justify-content: center;
+
+          @include scss-mixins.for-size(desktop-up) {
+            justify-content: left;
+            border-bottom: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            justify-content: center;
+          }
+        }
+
+        // ***************************
+        // > Show sub menu Hover state
+        &:hover {
+          > .sub-menu {
+            @include scss-mixins.for-size(desktop-up) {
+              display: flex;
+              overflow: visible;
+            }
+          }
+        }
+
+        // :: Level 2 > Nested sub menu list
+        ul.sub-menu {
+          flex-direction: column;
+          overflow: hidden;
+          height: 0;
+          transition: height 0.5s;
+          @include scss-mixins.for-size(desktop-up) {
+            height: auto;
+            padding-top: 48px;
+            display: none;
+            position: absolute;
+          }
+          // :: Level 2 > Nested sub menu list item
+          li.menu-item {
+            padding: 3px 0;
+            box-sizing: border-box;
+
+            // Add navigation arrow icon
+            &-has-children {
+              &:after {
+                content: "\203A";
+                color: #000;
+                height: 30px;
+                top: 10px;
+                background-color: #fff;
+                @include scss-mixins.font-size__line-height(20, 22);
+                @include scss-mixins.for-size(desktop-up) {
+                  height: 40px;
+                  display: block;
+                  top: 3px;
+                  right: 10px;
+                  color: #fff;
+                  background-color: transparent;
+                }
+              }
+            }
+
+            @include scss-mixins.for-size(desktop-up) {
+              padding: 3px 10px;
+              border-left: 1px solid #fff;
+              border-bottom: 0;
+              width: 100%;
+            }
+            a {
+              justify-content: left;
+              border-bottom: 1px solid #707070;
+
+              @include scss-mixins.for-size(desktop-up) {
+                color: #fff;
+                border-bottom: 0;
+              }
+            }
+
+            // :: Level 2 > Nested sub menu list item Hover state
+            &:hover {
+              .sub-menu {
+                @include scss-mixins.for-size(desktop-up) {
+                  padding-top: 0;
+                  padding-bottom: 0;
+                  display: flex;
+                  top: 0;
+                  position: absolute;
+                  justify-content: flex-start;
+                  left: 100%;
+                }
+              }
+            }
+
+            // :: Level 3 > Nested sub menu list
+            ul.sub-menu {
+              @include scss-mixins.for-size(desktop-up) {
+                display: none;
+                position: absolute;
+                height: 270px;
+                border-left: 1px solid #fff;
+              }
+
+              // :: Level 3 > Nested sub menu list item
+              li.menu-item {
+                margin: initial;
+
+                // background-color: red;
+                @include scss-mixins.for-size(desktop-up) {
+                  // height: 100%;
+                  border: 0;
+                }
+
+                a {
+                  padding-left: 30px;
+                  @include scss-mixins.for-size(desktop-up) {
+                    padding-left: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.acf-field-group-3-componant-button-group {
+  display: inline-flex;
+
+  &__button {
+    &-hollow {
+      border-width: 2px;
+      border-style: solid;
+      border-color: #fff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      padding: 7px 30px 5px;
+
+      font-weight: 500;
+    }
+
+    &-solid {
+      border: 10px solid green;
+    }
+  }
+}

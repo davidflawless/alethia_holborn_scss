@@ -1,0 +1,65 @@
+@use "./scss-abstracts";
+@use "./scss-mixins";
+
+.template-partial-acf-field-group-0-profile-information {
+  background-color: scss-abstracts.$scss-abstract-color-light-grey;
+
+  margin-top: 60px;
+
+  + section {
+    margin-top: 40px;
+  }
+
+  &__group {
+    // height: 414px;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // border: 10px solid red;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__cta-text {
+    margin-bottom: 40px;
+  }
+
+  &__cta-link-group {
+    // background-color: orange;
+    margin-top: auto;
+  }
+
+  // &__profile-information-group {
+  //   // border: 10px solid orange;
+  //   display: flex;
+  // }
+  &__profile-information-group-sidebar {
+    // border: 10px solid red;
+    // background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 100px;
+
+    @include scss-mixins.for-size(tablet-portrait-up) {
+      margin-top: 100px;
+    }
+
+    @include scss-mixins.for-size(tablet-landscape-up) {
+      margin-top: 50px;
+    }
+
+    @include scss-mixins.for-size(desktop-up) {
+      margin-top: 60px;
+      margin-bottom: 50px;
+    }
+  }
+
+  .abstract-typography-wysiwyg-editor-standard--specialism {
+    @include scss-mixins.for-size(desktop-up) {
+      width: 350px;
+    }
+  }
+}

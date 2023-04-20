@@ -1,0 +1,54 @@
+@use "./scss-mixins";
+
+.acf-field-group-2-flexable-layout-three-column-testimonials {
+  &__group {
+    // border: 10px solid black;
+  }
+  &__grid {
+    // border: 10px solid red;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 40px;
+    // grid-row-gap: 40px;
+
+    padding: 0 1rem;
+
+    
+    @include scss-mixins.for-size(tablet-portrait-up) {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 2rem;
+    }
+    
+    
+    @include scss-mixins.for-size(tablet-landscape-up) {
+        grid-column-gap: 60px;
+    }
+    
+    
+    
+    
+    @include scss-mixins.for-size(desktop-up) {
+        padding: 0;
+        grid-column-gap: 140px;
+        //   grid-row-gap: 80px;
+    }
+    // grid-row-gap: 100px;
+    * {
+      text-decoration: none;
+      // color: #fff;
+    }
+  }
+
+  &__grid-item {
+    display: flex;
+    flex-direction: column;
+
+    
+    margin-bottom: 2rem;
+
+    @include scss-mixins.for-size(tablet-portrait-up) {
+        margin-bottom: 0;
+    }
+  }
+}

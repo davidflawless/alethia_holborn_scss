@@ -1,0 +1,48 @@
+/* 
+*
+* ** Demonstration only **
+*
+* Gravity form styling
+* :: 'abstract-forms' needs to be added as a class name
+*/
+@use "./scss-abstracts";
+
+.abstract-forms {
+  &_wrapper {
+    .gform_title {
+      width: 250px;
+    }
+  }
+  input {
+    &[type="text"],
+    &[type="email"],
+    &[type="tel"] {
+      background-color: scss-abstracts.$scss-abstract-color-medium-grey;
+      border: 0;
+      padding: 20px !important;
+    }
+  }
+  textarea {
+    background-color: scss-abstracts.$scss-abstract-color-medium-grey;
+    border: 0;
+    padding: 20px;
+    padding: 20px !important;
+  }
+
+  .gform_button.button {
+    // display: flex;
+    // flex-direction: column;
+    @extend .ff-libre-baskerville__light;
+    background-color: scss-abstracts.$scss-abstract-color-super-dark-grey;
+    font-size: 22px;
+    color: #fff;
+    border: 0;
+    padding: 10px 50px;
+    border-radius: 5px;
+  }
+}
+
+// Gravity form overides
+.gform_wrapper.gravity-theme .gform_footer {
+  padding: 16px 0 0 !important;
+}

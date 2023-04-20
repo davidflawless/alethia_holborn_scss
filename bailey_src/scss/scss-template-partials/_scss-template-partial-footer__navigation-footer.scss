@@ -1,0 +1,118 @@
+// :: SCSS : Header
+@use "./scss-abstracts";
+@use "./scss-mixins";
+
+.template-partial-footer {
+  &__navigation-footer {
+    // border: 10px solid red;
+    // width: 70%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    &-container {
+      // border: 10px solid orange;
+    }
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 10%;
+
+      // justify-content: space-between;
+      // max-width: 100%;
+      // margin: 0 10% 0 0;
+
+      // border-left: 1px solid lightblue;
+      // display: grid;
+      // grid-template-columns: repeat(2, 1fr);
+      // grid-template-rows: repeat(2, 1fr);
+      // gap: 10%;
+
+      @include scss-mixins.for-size(tablet-portrait-up) {
+        // display: flex;
+        // justify-content: space-between;
+        // max-width: 100%;
+        // margin: 0 10% 0 0;
+      }
+
+      @include scss-mixins.for-size(tablet-landscape-up) {
+        // display: grid;
+        // grid-template-columns: repeat(2, 1fr);
+        // grid-template-rows: repeat(2, 1fr);
+        // margin: 2rem 0;
+        // max-width: 100%;
+        // margin: 0 10% 0 0;
+      }
+
+      > li {
+        max-width: 45%;
+        margin-bottom: 1rem;
+        @include scss-mixins.for-size(tablet-portrait-up) {
+          margin-bottom: 0;
+        }
+
+        > a {
+          // border: 10px solid red;
+          font-weight: 700;
+          color: #fff;
+          text-decoration: none;
+          margin-bottom: 0.8rem;
+          display: flex;
+        }
+
+        > ul > {
+          li a {
+            @include scss-mixins.font-size__line-height(14, 24);
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+        // Social Links
+        &:last-child {
+          .menu-item {
+            // background-color: red;
+            display: flex;
+            align-items: center;
+            &::before {
+              content: "";
+              width: 17px;
+              height: 17px;
+              position: relative;
+              display: block;
+              margin-right: 10px;
+              background-size: contain;
+              // background-color: orange;
+            }
+            &:nth-child(1) {
+              &::before {
+                background-image: url("../images/img-social-twitter.svg");
+              }
+            }
+
+            &:nth-child(2) {
+              &::before {
+                background-image: url("../images/img-social-linkedin.svg");
+              }
+            }
+
+            &:nth-child(3) {
+              &::before {
+                background-image: url("../images/img-social-facebook.svg");
+              }
+            }
+
+            &:nth-child(4) {
+              &::before {
+                background-image: url("../images/img-social-youtube.svg");
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-list-item {
+      border: 10px solid lightgreen;
+    }
+  }
+}

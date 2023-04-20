@@ -1,0 +1,27 @@
+@use "./scss-abstracts";
+@use "./scss-mixins";
+
+.template-partial-acf-field-group-0-breadcrumb {
+  &__group {
+  }
+
+  #breadcrumbs {
+    margin: 0;
+    padding: 15px 0;
+    padding-left: 36px;
+    background-image: url("../images/awesome-home.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 24px;
+    @include scss-mixins.font-size__line-height(16, 16);
+
+    // @include scss-mixins.for-size(desktop-up) {
+    //     margin-bottom: 100px;
+    // }
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+}

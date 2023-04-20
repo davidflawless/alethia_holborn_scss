@@ -1,0 +1,37 @@
+/** test 
+*
+* :: Font size, line height and rhythm SASS mixins
+*
+* Reference : https://codepen.io/vajkri/pen/QwvLgg
+*
+* How to use :
+*
+* h1 {
+*   @include rhythm(32, 38);
+* }
+*
+* Will compile to
+*
+* h1 {
+*   font-size: 36px;
+*   font-size: 2.25rem;
+*   line-height: 40px;
+*   line-height: 2.5rem;
+* }
+*
+*/
+
+@mixin font-size($sizeValue: 12) {
+  font-size: $sizeValue + px; //fallback for old browsers
+  font-size: (0.0625 * $sizeValue) + rem;
+}
+
+@mixin line-height($heightValue: 20) {
+  line-height: $heightValue + px; //fallback for old browsers
+  line-height: (0.0625 * $heightValue) + rem;
+}
+
+@mixin rhythm($sizeValue: 12, $heightValue: 20) {
+  @include font-size($sizeValue);
+  @include line-height($heightValue);
+}

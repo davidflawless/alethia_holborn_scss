@@ -1,0 +1,820 @@
+/* Typography
+*/
+@use "../scss-mixins";
+@use "../scss-abstracts";
+
+body {
+  @extend .ff-proxima-nova__light;
+}
+
+p {
+  margin-block-start: 0;
+}
+
+p,
+ul > li,
+ol > li {
+  @include scss-mixins.font-size__line-height(16, 24);
+  @extend .ff-proxima-nova__light;
+  //margin-bottom: 1rem
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  > span {
+    font-size: inherit !important;
+  }
+}
+
+table {
+  @include scss-mixins.font-size__line-height(16, 24);
+  @extend .ff-proxima-nova__light;
+}
+
+ul {
+  // margin-bottom: 1.2rem;
+}
+
+// Buttons
+[class^="acf-field-group-3-componant-button-group__button"] {
+  @include scss-mixins.font-size__line-height(22, 24);
+  @extend .ff-libre-baskerville__heavy;
+}
+
+a,
+li a {
+  color: #780d42;
+}
+
+// :: -standard
+// :: -large--White
+// :: -large-quote--White
+
+//
+
+// wysiwyg standardisation
+// -----------------------
+.abstract-typography-wysiwyg-editor {
+  display: flex;
+  flex-direction: column;
+
+  &-standard {
+    @extend .abstract-typography-wysiwyg-editor;
+
+    .title__pos {
+      padding: 0 0 1rem 1rem;
+
+      @include scss-mixins.for-size(tablet-portrait-up) {
+        padding: 0 0 0 2rem;
+      }
+
+      @include scss-mixins.for-size(desktop-up) {
+        padding: 0;
+      }
+    }
+
+    // htags h1, h2 & h3 all the same - heavy
+    @include scss-mixins.mixin-typography-htags__large {
+      @include scss-mixins.font-size__line-height(32, 42);
+      @extend .ff-libre-baskerville__heavy;
+
+      padding: 0;
+      //   padding: 0 0 1rem 1rem;
+
+      //   @include scss-mixins.for-size(tablet-portrait-up) {
+      //         padding: 0 0 0 2rem;
+
+      //   }
+
+      //   @include scss-mixins.for-size(tablet-landscape-up) {
+      //     //padding: 4rem 0 0;
+      //     padding: 0
+      //   }
+    }
+
+    // htags h4, h5 & h6 all the same
+    @include scss-mixins.mixin-typography-htags__small {
+      @extend .ff-libre-baskerville__heavy;
+    }
+
+    &--abstract-color-burgandy {
+      color: scss-abstracts.$scss-abstract-color-burgandy;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    ol {
+      li {
+        margin-bottom: 1.2rem;
+      }
+    }
+
+    .abstract-typography-wysiwyg-editor-standard__resized-h2 {
+      @extend .abstract-typography-wysiwyg-editor;
+      // htags h1, h2 & h3 all the same - heavy
+      @include scss-mixins.mixin-typography-htags__large {
+        @include scss-mixins.font-size__line-height(22, 32);
+        @extend .ff-libre-baskerville__heavy;
+
+        //padding-left: 0;
+
+        @include scss-mixins.for-size(phone-only) {
+          @include scss-mixins.font-size__line-height(18, 32);
+        }
+      }
+    }
+
+    .abstract-typography-wysiwyg-editor-standard-resized-h4 {
+      @include scss-mixins.mixin-typography-htags__small {
+        @include scss-mixins.font-size__line-height(19, 40);
+        @extend .ff-libre-baskerville__heavy;
+      }
+
+      h4 {
+        line-height: 40px;
+      }
+    }
+
+    .abstract-typography-wysiwyg-editor-standard-resized-h4-v2 {
+      @include scss-mixins.mixin-typography-htags__small {
+        @include scss-mixins.font-size__line-height(24, 40);
+        @extend .ff-libre-baskerville__heavy;
+      }
+
+      h4 {
+        line-height: 40px;
+      }
+    }
+  }
+
+  // ul {
+  //   padding-left: 0.9rem;
+  //   > li {
+  //     list-style-type: disc;
+  //   }
+  // }
+
+  // &--white {
+  //   color: #fff;
+  // }
+
+  &-large {
+    @include scss-mixins.mixin-typography-htags {
+      @include scss-mixins.font-size__line-height(28, 40);
+      margin-bottom: 1rem;
+      @extend .ff-libre-baskerville__heavy;
+    }
+
+    p {
+      @include scss-mixins.font-size__line-height(22, 40);
+    }
+    // &__larger-paragraph {
+    //   @include scss-mixins.font-size__line-height(18, 32);
+    // }
+
+    &-link {
+      color: #000;
+      text-decoration: none;
+    }
+
+    &--no-margin {
+      margin: 0;
+    }
+  }
+
+  &-large_cta {
+    @include scss-mixins.mixin-typography-htags {
+      @include scss-mixins.font-size__line-height(28, 40);
+      margin-bottom: 1rem;
+      @extend .ff-libre-baskerville__heavy;
+    }
+
+    p {
+      @include scss-mixins.font-size__line-height(19.2, 30);
+    }
+
+    // &__larger-paragraph {
+    //   @include scss-mixins.font-size__line-height(18, 32);
+    // }
+
+    &-link {
+      color: #000;
+      text-decoration: none;
+    }
+
+    &--no-margin {
+      margin: 0;
+    }
+  }
+
+  &-standard-small {
+    @include scss-mixins.mixin-typography-htags-posts {
+      @include scss-mixins.font-size__line-height(16, 24);
+      @extend .ff-libre-baskerville__heavy;
+    }
+
+    @include scss-mixins.mixin-typography-htags__small {
+      @include scss-mixins.font-size__line-height(18, 32);
+      @extend .ff-libre-baskerville__heavy;
+    }
+
+    p {
+      @include scss-mixins.font-size__line-height(14, 20);
+    }
+
+    // htags h4, h5 & h6 all the same
+    @include scss-mixins.mixin-typography-htags__small {
+      //@extend .ff-libre-baskerville__heavy;
+    }
+
+    .abstract-typography-wysiwyg-editor-standard-resized-h4-v2 {
+      @include scss-mixins.mixin-typography-htags__small {
+        @include scss-mixins.font-size__line-height(22, 22);
+        @extend .ff-libre-baskerville__heavy;
+      }
+
+      h4 {
+        line-height: 1.75rem;
+      }
+    }
+
+    &__text-block {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+  }
+
+  // &-standard-small-meta {
+  //   // @include scss-mixins.mixin-typography-htags {
+  //   @include scss-mixins.font-size__line-height(13, 16);
+  //   //   margin-bottom: 1rem;
+  //   //   @extend .ff-libre-baskerville__heavy;
+  //   // }
+  //   // p {
+  //   //   @include scss-mixins.font-size__line-height(26, 40);
+  //   // }
+  // }
+
+  // :: Variants
+  // -----------
+  &-large--white {
+    @extend .abstract-typography-wysiwyg-editor-large_cta;
+    color: #fff;
+    // border: 10px solid green;
+  }
+
+  &-tiny--white {
+    @extend .abstract-typography-wysiwyg-editor;
+    // htags h1, h2 & h3 all the same - heavy
+    @include scss-mixins.mixin-typography-htags__large {
+      @include scss-mixins.font-size__line-height(14, 32);
+      @extend .ff-proxima-nova__light;
+      margin-bottom: 0.3rem !important;
+    }
+
+    // htags h4, h5 & h6 all the same
+    @include scss-mixins.mixin-typography-htags__small {
+      @extend .ff-proxima-nova__heavy;
+    }
+
+    p {
+      @include scss-mixins.font-size__line-height(12, 16);
+    }
+    color: #fff;
+
+    // border: 10px solid green;
+  }
+
+  &-large-quote--white {
+    @extend .abstract-typography-wysiwyg-editor-large;
+    color: #fff;
+
+    p {
+      &:first-child {
+        @include scss-mixins.font-size__line-height(19, 30);
+
+        &:before {
+          content: '"';
+          position: relative;
+          width: 30px;
+          height: 20px;
+          top: 0;
+          left: 0;
+          font-family: "Courier New", Courier, monospace;
+          background-size: cover;
+        }
+        &:after {
+          content: '"';
+          position: relative;
+          width: 30px;
+          height: 20px;
+          bottom: 0;
+          right: 0px;
+          font-family: "Courier New", Courier, monospace;
+          background-size: cover;
+        }
+      }
+
+      &:last-child {
+        @include scss-mixins.font-size__line-height(20, 20);
+        margin-bottom: 0;
+        font-style: italic;
+      }
+    }
+  }
+
+  &-standard-light {
+    @extend .abstract-typography-wysiwyg-editor;
+    // htags h1, h2 & h3 all the same - heavy
+    @include scss-mixins.mixin-typography-htags__large {
+      @include scss-mixins.font-size__line-height(22, 32);
+      @extend .ff-libre-baskerville__light;
+    }
+
+    // htags h4, h5 & h6 all the same
+    @include scss-mixins.mixin-typography-htags__small {
+      @extend .ff-libre-baskerville__light;
+    }
+  }
+
+  // :: Has sudo classes for arrows
+  &-standard-light__profiles {
+    @extend .abstract-typography-wysiwyg-editor-standard-light;
+    display: inline-block;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @include scss-mixins.font-size__line-height(18, 16);
+      color: #000;
+    }
+  }
+
+  // :: Has sudo classes for arrows
+  &-standard-light__faq {
+    @extend .abstract-typography-wysiwyg-editor-standard-light;
+    display: inline-block;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      margin-bottom: 0;
+
+      font-size: 1.25rem;
+
+      .read-more {
+        display: none;
+
+        @include scss-mixins.for-size(desktop-up) {
+          display: block;
+          color: #780d42;
+          position: absolute;
+          font-size: 1rem !important;
+          font-weight: bold;
+          width: 100px;
+          left: 0;
+          top: 34px;
+        }
+      }
+
+      &:before {
+        display: none;
+
+        @include scss-mixins.for-size(desktop-up) {
+          display: block;
+          content: "";
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          left: 105px;
+          top: 30px;
+
+          border-radius: 50%;
+          border: 1px solid #000;
+          background-color: #000;
+          transition: background-color 0.25s;
+        }
+      }
+
+      &:after {
+        display: none;
+
+        @include scss-mixins.for-size(desktop-up) {
+          display: block;
+          content: "";
+          display: inline-block;
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          left: 115px;
+          top: 43px;
+
+          background: transparent;
+          text-indent: -9999px;
+          border-top: 2px solid #fff;
+          border-left: 2px solid #fff;
+          transition: all 0.3s ease-in-out;
+          text-decoration: none;
+          color: transparent;
+          transform: rotate(136deg);
+          transition: transform 0.25s;
+          transform-origin: 5px 4px;
+          // background-color: green;
+        }
+      }
+
+      &:hover {
+        &:before {
+          background-color: transparent;
+        }
+        &:after {
+          transform: rotate(227deg);
+          border-top: 2px solid #000;
+          border-left: 2px solid #000;
+        }
+      }
+    }
+
+    &.open {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        &:before {
+          background-color: transparent;
+        }
+        &:after {
+          transform: rotate(227deg);
+          border-top: 2px solid #000;
+          border-left: 2px solid #000;
+        }
+      }
+    }
+  }
+
+  // :: Hero's are one offs
+  &-standard-light__hero {
+    color: #fff;
+    text-align: center;
+    @extend .abstract-typography-wysiwyg-editor-standard-light;
+    //
+    @include scss-mixins.mixin-typography-htags__large {
+      @include scss-mixins.font-size__line-height(32, 45);
+      @extend .ff-libre-baskerville__light;
+    }
+
+    // htags h4, h5 & h6 all the same
+    @include scss-mixins.mixin-typography-htags__small {
+      @include scss-mixins.font-size__line-height(19, 32);
+      @extend .ff-libre-baskerville__light;
+    }
+    //
+    &-site-title {
+      color: scss-abstracts.$scss-abstract-color-olive;
+    }
+    &.hide {
+      display: none;
+    }
+  }
+
+  &-standard__link--scss-abstract-color-brand-burgandy {
+    @extend .abstract-typography-wysiwyg-editor-standard;
+    @extend .ff-libre-baskerville__heavy;
+    * {
+      cursor: pointer;
+      color: scss-abstracts.$scss-abstract-color-burgandy;
+    }
+  }
+
+  &-standard__sub-heading {
+    @extend .abstract-typography-wysiwyg-editor-standard;
+    @extend .ff-libre-baskerville__heavy;
+    * {
+      cursor: pointer;
+      color: scss-abstracts.$scss-abstract-color-olive;
+    }
+  }
+
+  &-standard__heavy {
+    @extend .abstract-typography-wysiwyg-editor-standard;
+    @extend .ff-libre-baskerville__heavy;
+    * {
+      // border: 20px solid orange;
+      // cursor: pointer;
+      // color: scss-abstracts.$scss-abstract-color-olive;
+    }
+  }
+
+  &-standard-light__link {
+    @extend .abstract-typography-wysiwyg-editor-standard-light;
+    @include scss-mixins.mixin-typography-htags__link-no-margin;
+  }
+
+  &-standard__section-header {
+    @extend .abstract-typography-wysiwyg-editor-standard;
+    *:last-child {
+      //margin-bottom: 100px;
+    }
+
+    padding: 1rem;
+
+    @include scss-mixins.for-size(tablet-portrait-up) {
+      padding: 2rem;
+    }
+  }
+
+  &-standard__cta-sub-heading-color {
+    color: scss-abstracts.$scss-abstract-color-olive;
+  }
+
+  &-standard__cta-link-group-color {
+    @extend .abstract-typography-wysiwyg-editor-standard;
+    color: #000;
+  }
+
+  &-standard__cta-link-color {
+    color: scss-abstracts.$scss-abstract-color-burgandy;
+  }
+}
+
+.abstract-typography-modified-list {
+  // border: 10px solid green;
+  display: flex;
+  // align-content: flex-start;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+
+  &--collapsed {
+    @extend .abstract-typography-modified-list;
+    height: 100%;
+    overflow: hidden;
+    max-height: 43px;
+    justify-content: space-between;
+  }
+
+  &-item--blue {
+    background-color: scss-abstracts.$scss-abstract-color-emerald;
+    border-radius: 10px;
+    padding: 5px 15px;
+    display: inline-block;
+    white-space: nowrap;
+    * {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    &-not-active {
+      &:first-child {
+        @extend .abstract-typography-modified-list-item--blue-light;
+        &.active ~ li {
+          @extend .abstract-typography-modified-list-item--blue;
+          // border: 10px solid blue;
+        }
+      }
+    }
+  }
+
+  &-item--blue-light {
+    background-color: scss-abstracts.$scss-abstract-color-emerald-light;
+    border-radius: 10px;
+    padding: 5px 15px;
+    display: inline-block;
+    white-space: nowrap;
+
+    &:last-child {
+      margin-right: auto;
+    }
+    * {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    &.active {
+      // border: 10px solid red;
+      background-color: scss-abstracts.$scss-abstract-color-emerald;
+    }
+
+    &:first-child {
+      &.active ~ li {
+        @extend .abstract-typography-modified-list-item--blue;
+        // border: 10px solid blue;
+      }
+    }
+  }
+
+  &-item--blue-outline {
+    > a {
+      border: 1px solid scss-abstracts.$scss-abstract-color-emerald;
+      border-radius: 10px;
+      padding: 5px 15px;
+      display: inline-block;
+      white-space: nowrap;
+      // * {
+      color: #000;
+      text-decoration: none;
+      // }
+    }
+    span.current {
+      background-color: scss-abstracts.$scss-abstract-color-emerald;
+      border-radius: 10px;
+      padding: 5px 15px;
+      display: inline-block;
+      white-space: nowrap;
+      // * {
+      color: #fff;
+      text-decoration: none;
+      // }
+    }
+  }
+}
+
+.abstract-typography-modified-list-standard {
+  display: flex;
+  // flex-direction: column;
+  align-content: flex-start;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  &-item {
+    display: inline-block;
+
+    * {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+.abstract-typography-modified-list-column {
+  // border: 10px solid red;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  &-item {
+    display: inline-block;
+
+    * {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+// Icons
+
+.acf-field-group-2-flexable-layout-testimonials-grid__grid-item {
+  &:before {
+    @include scss-mixins.font-size__line-height(50, 0);
+  }
+}
+
+.abstract-typography-footer-right-link-group {
+  display: flex;
+  padding: 40px 0 20px;
+
+  &__link {
+    // border: 10px solid green;
+    margin-left: auto;
+
+    padding-right: 32px;
+
+    @include scss-mixins.for-size(desktop-up) {
+      padding-right: 10px;
+    }
+
+    display: flex;
+    position: relative;
+    justify-items: center;
+    align-items: center;
+    text-decoration: none;
+    &:after {
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+      content: "\203A";
+      color: #fff;
+      display: block;
+      width: 30px;
+      min-width: 30px;
+      height: 30px;
+      left: 10px;
+      // margin-rightt: 10px;
+      // position: absolute;
+      position: relative;
+      background-color: #000;
+      @include scss-mixins.font-size__line-height(45, 22);
+      border-radius: 50%;
+    }
+
+    * {
+      text-decoration: none;
+    }
+  }
+}
+
+////////// *********
+///
+/// Overwrites for the homne page ; H2 tags
+///
+////////// *********
+
+.page-id-10 {
+  .abstract-typography-wysiwyg-editor {
+    &-standard {
+      .abstract-typography-wysiwyg-editor-standard__resized-h2 {
+        @extend .abstract-typography-wysiwyg-editor;
+        // htags h1, h2 & h3 all the same - heavy
+        @include scss-mixins.mixin-typography-htags__large {
+          @include scss-mixins.font-size__line-height(32, 32);
+          @extend .ff-libre-baskerville__heavy;
+
+          @include scss-mixins.for-size(phone-only) {
+            @include scss-mixins.font-size__line-height(18, 32);
+          }
+        }
+      }
+    }
+  }
+}
+
+.abstract-typography-modified-list-related-links {
+  // border: 10px solid red;
+  display: flex;
+  align-content: flex-start;
+  // justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+    margin-bottom: 1.2rem;
+  }
+
+  li {
+    margin-bottom: 1.2rem;
+
+    * {
+      text-decoration: none;
+    }
+  }
+
+  &-link-group {
+    display: flex;
+    // padding: 40px 0 20px;
+
+    &__link {
+      // border: 10px solid green;
+      // margin-left: auto;
+      padding-right: 10px;
+      display: flex;
+      position: relative;
+      justify-items: center;
+      align-items: center;
+      text-decoration: none;
+      &:after {
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+        content: "\203A";
+        color: #fff;
+        display: block;
+        width: 30px;
+        min-width: 30px;
+        height: 30px;
+        left: 10px;
+        // margin-rightt: 10px;
+        // position: absolute;
+        position: relative;
+        background-color: #000;
+        @include scss-mixins.font-size__line-height(45, 22);
+        border-radius: 50%;
+      }
+
+      * {
+        text-decoration: none;
+      }
+    }
+  }
+}

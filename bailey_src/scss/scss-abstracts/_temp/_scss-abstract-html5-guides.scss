@@ -1,0 +1,31 @@
+// HTML base
+//
+// Notes:
+// :: Normalize in place,
+// :: Reset not used :
+// - https://nicolasgallagher.com/about-normalize-css/
+// - https://www.webfx.com/blog/web-design/should-you-reset-your-css/
+// :: display: flex; on direct children of body to prevent margin collapse : https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing
+
+body {
+  // border: 10px solid blue;
+
+  header,
+  section,
+  footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  > header {
+    background-color: yellow;
+  }
+
+  > section {
+    background-color: lightblue;
+  }
+
+  footer {
+    background-color: green;
+  }
+}

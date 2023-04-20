@@ -1,0 +1,60 @@
+@use "./scss-abstracts";
+@use "./scss-mixins";
+
+.acf-field-group-2-flexable-layout-full-width-cta {
+    position: relative;
+    background-color: scss-abstracts.$scss-abstract-color-burgandy;
+
+    margin-bottom: 50px;
+
+    @include scss-mixins.for-size(desktop-up) {
+        margin-bottom: 100px;
+    }
+
+    &__background-image {
+        position: absolute;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+    }
+
+
+    &__group {
+        position: relative;
+        padding-left: 40px;
+        padding-right: 40px;
+        @include scss-mixins.for-size(desktop-up) {
+            padding-right: 0;
+        }
+
+        &:before {
+            content: "";
+            width: 4px;
+            height: 100%;
+            position: absolute;
+            left: 0;
+        }
+    }
+
+
+    &__cta-meta {
+        // display: flex;
+        // flex-direction: column;
+        position: relative;
+
+        // Left border
+        &:before {
+
+            @include scss-mixins.for-size(desktop-up) {
+                content: "";
+                background-color: #fff;
+                width: 4px;
+                height: 100%;
+                position: absolute;
+                display: block;
+                left: -40px;
+                top: 0;
+            }
+        }
+    }
+}

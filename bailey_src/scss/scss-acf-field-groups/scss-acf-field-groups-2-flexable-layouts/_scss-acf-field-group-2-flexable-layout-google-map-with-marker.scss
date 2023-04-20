@@ -1,0 +1,41 @@
+@use "./scss-mixins";
+@use "./scss-abstracts";
+
+
+.acf-field-group-2-google-map-with-marker {
+  //   background-image: url(../images/bgd-acf-field-group-0-hero-@2x.png);
+  //   background-size: contain;
+  //   background-repeat: no-repeat;
+  //   background-position: center;
+  //   background-color: #01122f;
+
+  &__group {
+    border: 10px solid red;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.acf-map {
+  width: 100%;
+  height: 500px;
+  border: #ccc solid 1px;
+}
+
+// Fixes potential theme css conflict.
+.acf-map img {
+  max-width: inherit !important;
+}
+
+
+.single-locations {
+
+    .acf-map {
+      
+          @include scss-mixins.for-size(desktop-up) {
+                  margin-bottom: 4rem;
+          }
+      }
+}

@@ -1,0 +1,34 @@
+/* 
+*
+* ** Demonstration only **
+*
+* fonts
+*/
+
+// :: Import mixin form 'node_modules'
+@use "./node_modules/flexbox-grid-mixins/dart-sass/flexbox-grid-mixins";
+
+@use "../scss-mixins";
+
+$default-grid-gutter: 60px;
+
+.abstract-flexbox {
+
+  &-grid {
+
+    @include flexbox-grid-mixins.grid($gutter: $default-grid-gutter);
+
+  }
+
+    // &-grid-item {
+
+    // }
+
+  > .grid__col-3 {
+    @include flexbox-grid-mixins.grid-col($col: 3, $gutter: $default-grid-gutter);
+  }
+  > .grid__col-9 {
+    @include flexbox-grid-mixins.grid-col($col: 9, $gutter: $default-grid-gutter);
+  }    
+
+}
