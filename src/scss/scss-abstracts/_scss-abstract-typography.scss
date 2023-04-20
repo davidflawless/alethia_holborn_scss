@@ -23,8 +23,9 @@ body {
   h1,
   h2,
   h3 {
-    @include scss-mixins.font-size__line-height(28, 40);    
-    margin-bottom: 1rem;
+    @include scss-mixins.font-size__line-height(40, 48);    
+    margin-bottom: 2rem;
+    text-transform: uppercase
   }
 }
 
