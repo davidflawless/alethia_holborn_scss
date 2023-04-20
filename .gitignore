@@ -53,9 +53,9 @@ wp-config.php
 
 # Ignore gulp files
 node_modules/
-package-lock.json
-package.json
-gulpfile.js
+# package-lock.json
+# package.json
+# gulpfile.js
 
 # Ignore build directory
 build/
