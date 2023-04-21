@@ -1,57 +1,58 @@
 @use "./scss-abstracts";
+@use "./scss-mixins";
 
-.template-partial-page-contact{
-    // background-color: lightgreen;
+.template-partial-page-contact {
+  @include scss-mixins.for-size(tablet-landscape-up) {
+    margin-bottom: -89px;
+    min-height: 100%;
+  }
 
-    &-group{
-        width: 43%;
-        // background-color: yellow;
-    }
-    &-content{
-        margin-bottom: 2rem;
-    }
+  &-group {
+    width: 43%;
+    position: relative;
+    z-index: 1;
 
-    &-grid{
-        // position: fixed;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;      
-        // height: 100vh;   ;
-    }
+    // background-color: yellow;
+  }
+  &-content {
+    margin-bottom: 2rem;
+  }
 
-    &-grid-item{
-        &:first-child{
-            // background-color: lightblue;
-        }
+  &-grid {
+    // position: fixed;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    // height: 100vh;   ;
+  }
 
-        &:last-child{
-            // background-color: lightcoral;
-        }
-    }       
-
-    &-grid-item{
-
-        &-logo{
-            margin-bottom:46px;
-            width: 100%;
-            max-width: 117px;
-        }
-
-        &:last-child{
-            
-            .template-partial-page-contact-grid-item-logo{
-                margin-bottom:  23px;
-                margin-top:23px;
-            }
-        }
-
-
-
+  &-grid-item {
+    &:first-child {
+      // background-color: lightblue;
     }
 
-    
+    &:last-child {
+      // background-color: lightcoral;
+    }
+  }
+
+  &-grid-item {
+    &-logo {
+      margin-bottom: 46px;
+      width: 100%;
+      max-width: 117px;
+      height: 43px;
+    }
+
+    &:last-child {
+      .template-partial-page-contact-grid-item-logo {
+        margin-bottom: 23px;
+        margin-top: 23px;
+      }
+    }
+  }
 }
 
 // .template-partial-page-spinner-filler{
@@ -61,7 +62,6 @@
 //     top:0;
 //     right:0;
 //     z-index: 0;
-
 
 //     &-img{
 //         // border: 10px solid yellow;
@@ -82,7 +82,7 @@
 //         grid-template-columns: repeat(2, 1fr);
 //         grid-template-rows: 1fr;
 //         grid-column-gap: 0px;
-//         grid-row-gap: 0px;      
+//         grid-row-gap: 0px;
 //         height: 100vh;   ;
 //     }
 
@@ -94,8 +94,6 @@
 //         &:last-child{
 //             background-size: cover;
 //         }
-//     }    
-
+//     }
 
 // }
-

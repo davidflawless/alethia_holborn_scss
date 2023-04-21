@@ -2,206 +2,173 @@
 
 // Animations
 @keyframes front-page-site-logo-opacity {
-    from {
-        opacity: 0;
+  from {
+    opacity: 0;
+  }
 
-    }
-
-    to {
-        opacity: 1;
-
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes front-page-site-logo-opacity--white-out {
-    from {
-        opacity: 1;
+  from {
+    opacity: 1;
+  }
 
-    }
-
-    to {
-        opacity: 0;
-
-    }
+  to {
+    opacity: 0;
+  }
 }
-
 
 @keyframes front-page-site-logo-opacity--brown-in {
-    from {
-        opacity: 0;
+  from {
+    opacity: 0;
+  }
 
-    }
-
-    to {
-        opacity: 1;
-
-    }
+  to {
+    opacity: 1;
+  }
 }
 
-
 @keyframes spin-clockwise {
+  0% {
+    transform: rotate(0deg);
+  }
 
-    0% {
-        transform: rotate(0deg);
+  55% {
+    transform: rotate(360deg);
+  }
 
-    }
+  60% {
+    transform: rotate(360deg);
+  }
 
-    55% {
-        transform: rotate(360deg);
-
-    }
-
-    60% {
-        transform: rotate(360deg);
-
-    }
-
-    100% {
-        transform: rotate(0deg);
-
-    }
-
-
-
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 @keyframes spin-clockwise-opacity {
-    from {
-        opacity: 0;
+  from {
+    opacity: 0;
+  }
 
-    }
-
-    to {
-        opacity: 1;
-
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes pulse-logo {
-    0% {
-        transform: scale(1);
+  0% {
+    transform: scale(1);
+  }
 
-    }
+  30% {
+    transform: scale(1.8);
+  }
 
-    30% {
-        transform: scale(1.8);
+  70% {
+    transform: scale(1.8);
+  }
 
-    }
-
-    70% {
-        transform: scale(1.8);
-
-    }
-
-    100% {
-        transform: scale(1);
-
-    }
+  100% {
+    transform: scale(1);
+  }
 }
 
 body.home {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .front-page {
-    &-group {
-        // border: 10px solid red;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+  &-group {
+    // border: 10px solid red;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-site-logo {
+    text-align: center;
+    width: 35vh;
+    height: 35vh;
+
+    // @media @smv {
+    @include scss-mixins.for-size(tablet-portrait-up) {
+      width: 70vh;
+      height: 70vh;
     }
 
-    &-site-logo {
-        text-align: center;
-        width: 35vh;
-        height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation-name: front-page-site-logo-opacity, pulse-logo;
+    //
+    animation-delay: 0.2s, 0s;
+    animation-duration: 0.1s, 9s;
+    animation-iteration-count: 1, 1;
+    animation-fill-mode: forwards, forwards;
 
-        // @media @smv {
-        @include scss-mixins.for-size(tablet-portrait-up) {  
-            width: 70vh;
-            height: 70vh;
-        }
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        opacity: 0;
-        animation-name: front-page-site-logo-opacity,
-        pulse-logo;
-        //
-        animation-delay: .2s,
-        0s;
-        animation-duration: .1s,
-        9s;
-        animation-iteration-count: 1,
-        1;
-        animation-fill-mode: forwards,
-        forwards;
-
-        >* {
-            position: absolute;
-            text-align: center;
-        }
-
-        &__outer-img {
-            width: 100%;
-
-        }
-
-        &__inner-level-img-one {
-            width: 67%;
-        }
-
-        &__outer-img,
-        &__inner-level-img-one {
-            opacity: 0;
-            //
-            animation-name: spin-clockwise-opacity, spin-clockwise;
-            animation-delay: 2.5s, 1.5s;
-            animation-duration: 2.5s, 7.5s;
-            animation-iteration-count: 1, 1;
-            animation-fill-mode: forwards, forwards;
-
-
-        }
-
-        &__inner-level-img-two {
-            opacity: 0;
-            // border: 10px solid red;
-            width: 43%;
-            //
-            animation-name: spin-clockwise-opacity;
-            animation-delay: 2.5s;
-            animation-duration: 2.5s;
-            animation-iteration-count: 1;
-            animation-fill-mode: forwards;
-
-        }
-
-
-
-        &__centre-img--brown,
-        &__centre-img--white {
-            width: 45%;
-        }
-
-        &__centre-img--white {
-            opacity: 1;
-            animation-name: front-page-site-logo-opacity--white-out;
-            animation-delay: 3s;
-            animation-duration: 1s;
-            animation-iteration-count: 1;
-            animation-fill-mode: forwards;
-        }
-
-        &__centre-img--brown {
-            opacity: 0;
-            animation-name: front-page-site-logo-opacity--brown-in;
-            animation-delay: 3s;
-            animation-duration: .5s;
-            animation-iteration-count: 1;
-            animation-fill-mode: forwards;
-        }
+    > * {
+      position: absolute;
+      text-align: center;
     }
+
+    &__outer-img {
+      width: 100%;
+    }
+
+    &__inner-level-img-one {
+      width: 67%;
+    }
+
+    &__outer-img,
+    &__inner-level-img-one {
+      opacity: 0;
+      //
+      animation-name: spin-clockwise-opacity, spin-clockwise;
+      animation-delay: 2.5s, 1.5s;
+      animation-duration: 2.5s, 7.5s;
+      animation-iteration-count: 1, 1;
+      animation-fill-mode: forwards, forwards;
+    }
+
+    &__inner-level-img-two {
+      opacity: 0;
+      // border: 10px solid red;
+      width: 43%;
+      //
+      animation-name: spin-clockwise-opacity;
+      animation-delay: 2.5s;
+      animation-duration: 2.5s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+
+    &__centre-img--brown,
+    &__centre-img--white {
+      width: 45%;
+    }
+
+    &__centre-img--white {
+      opacity: 1;
+      animation-name: front-page-site-logo-opacity--white-out;
+      animation-delay: 3s;
+      animation-duration: 1s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+
+    &__centre-img--brown {
+      opacity: 0;
+      animation-name: front-page-site-logo-opacity--brown-in;
+      animation-delay: 3s;
+      animation-duration: 0.5s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+  }
 }

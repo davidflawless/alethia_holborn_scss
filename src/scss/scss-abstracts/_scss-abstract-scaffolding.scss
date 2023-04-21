@@ -1,29 +1,26 @@
 @use "../scss-mixins";
 // @use "../scss-abstracts";
 
+html,
 body {
-  // padding-top: 91px;
-  // position: relative;
-  @include scss-mixins.for-size(desktop-up) {
-    // padding-top: 130px;
+  @include scss-mixins.for-size(tablet-landscape-up) {
+    height: 100%;
+    margin: 0;
   }
 }
+
 .scaffolding {
   display: flex;
   flex-direction: column;
 
   &-container {
     @extend .scaffolding;
-    // border: 10px solid orange;
     flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
-    // border: 10px solid blue;
     width: 100%;
     padding: 65px;
-
-    //max-width: 100%;
   }
 
   &-row {
@@ -36,28 +33,28 @@ body {
     flex: 1;
     box-sizing: border-box;
 
-  //   > div {
-  //     padding-top: 50px;
-  //     padding-bottom: 50px;
+    //   > div {
+    //     padding-top: 50px;
+    //     padding-bottom: 50px;
 
-  //     &.scaffolding-row-nopadding {
-  //       padding-top: 0;
-  //       padding-bottom: 0;
-  //     }
+    //     &.scaffolding-row-nopadding {
+    //       padding-top: 0;
+    //       padding-bottom: 0;
+    //     }
 
-  //     &.scaffolding-row-padding-top-none {
-  //       padding-top: 0;
-  //       // padding-bottom: 0;
-  //       // background-color: orange;
-  //     }
+    //     &.scaffolding-row-padding-top-none {
+    //       padding-top: 0;
+    //       // padding-bottom: 0;
+    //       // background-color: orange;
+    //     }
 
-  //     &.padding-extend-top-bottom {
-  //       @include scss-mixins.for-size(desktop-up) {
-  //         padding-top: 0;
-  //         padding-bottom: 75px;
-  //       }
-  //     }
-  //   }
+    //     &.padding-extend-top-bottom {
+    //       @include scss-mixins.for-size(desktop-up) {
+    //         padding-top: 0;
+    //         padding-bottom: 75px;
+    //       }
+    //     }
+    //   }
   }
 }
 

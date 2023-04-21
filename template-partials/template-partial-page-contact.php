@@ -69,54 +69,9 @@ $lh__layout_name = 'template-partial-page-contact';
                 </div>
 
                 <?php
-                // Star includes here
-
-                
+                // Spinner was here
                 ?>
-                <?php
-                // --------------
-                // Spinner filler
-                // --------------
-                ?>
-                <div class="template-partial-page-spinner-filler">
-                    
-                    <div class="template-partial-page-spinner-filler-grid">
 
-                        <div class="template-partial-page-spinner-filler-grid-item"></div>
-
-                        <div class="template-partial-page-spinner-filler-grid-item" <?= $var__image_right_url__style ?>></div>
-
-                    </div>
-
-                    <?php
-                    // ------------------------
-                    // Spinner filler - Spinner
-                    // ------------------------
-                    ?>
-                    <div class="template-partial-page-spinner-filler-img">
-
-                        <img 
-                        src="<?= $image_right_overlay; ?>"
-                        width="100%" 
-                        height="auto"
-                        alt="<?= $outer_img['alt']; ?>"
-                        title="<?= $outer_img['title']; ?>" 
-                        longdesc="<?= $outer_img['description']; ?>"
-                        >
-
-                    </div>
-                    <?php
-                    // -------------------------
-                    // /Spinner filler - Spinner
-                    // =========================
-                    ?>                    
-
-                </div>
-                <?php
-                // ---------------
-                // /Spinner filler
-                // ===============
-                ?>
 
                 <?php
                 // -----------------
@@ -235,8 +190,62 @@ $lh__layout_name = 'template-partial-page-contact';
         
             </div>
 
+
+            
+            
         </div>
 
     </div>
 
+                <?php
+                // --------------
+                // Spinner filler
+                // --------------
+                ?>
+                <div class="template-partial-page-spinner-filler">
+                    
+                    <div class="template-partial-page-spinner-filler-grid">
+
+                        <div class="template-partial-page-spinner-filler-grid-item"></div>
+
+                        <div class="template-partial-page-spinner-filler-grid-item" <?= $var__image_right_url__style ?>>
+                    
+                            <div class="template-partial-page-spinner-filler-grid-item-tint"></div>
+
+                        </div>
+
+                    </div>
+
+                    <?php
+                    // ------------------------
+                    // Spinner filler - Spinner
+                    // ------------------------
+                    ?>
+                    <div class="template-partial-page-spinner-filler-img-group">
+
+                        <img 
+                        class="template-partial-page-spinner-filler-img" 
+                        src="<?= $image_right_overlay; ?>"
+                        width="100%" 
+                        height="auto"
+                        alt="<?= $outer_img['alt']; ?>"
+                        title="<?= $outer_img['title']; ?>" 
+                        longdesc="<?= $outer_img['description']; ?>"
+                        >
+
+                    </div>
+                    <?php
+                    // -------------------------
+                    // /Spinner filler - Spinner
+                    // =========================
+                    ?>                    
+
+                </div>
+                <?php
+                // ---------------
+                // /Spinner filler
+                // ===============
+                ?>    
+
+    <div class="push"></div>
 </div>

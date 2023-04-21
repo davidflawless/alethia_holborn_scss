@@ -1,45 +1,37 @@
 @use "./scss-abstracts";
+@use "./scss-mixins";
 // .links-transition ('color 0.5s');
 // .links-transition ('background-color 0.5s');
 
 .page-id-2 footer {
-    display: none;
+  display: none;
 }
 
+// https://css-tricks.com/couple-takes-sticky-footer/
+footer,
+.push {
+  @include scss-mixins.for-size(tablet-landscape-up) {
+    height: 89px;
+  }
+}
+.push {
+  display: none;
+}
 footer {
+  background-color: scss-abstracts.$brand-dark-grey;
 
-background-color: orange;
+  .footer-logo__pos {
+    display: table;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
 
-    background-color: scss-abstracts.$brand-dark-grey;
-    //height: 82px;
+  .copyright {
+    padding-bottom: 1rem;
 
-    // @media @smv {
-
-    // position: fixed;
-    // bottom: 0;
-    // width: 100%;
-
-    // }
-    
-    // @media @lrgv {
-    //     display: none;
-    // }
-    
-
-    .footer-logo__pos {
-
-        display: table;
-        margin: 0 auto;
-        padding: 1rem 0;
+    p {
+      font-size: 0.7rem;
+      text-align: center;
     }
-    
-    .copyright {
-
-        padding-bottom: 1rem;
-
-        p {
-            font-size: .7rem;
-            text-align: center;
-        }
-    }
+  }
 }
