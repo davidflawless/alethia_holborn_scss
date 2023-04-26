@@ -18,14 +18,40 @@ body {
 // -----------------------
 
 //:: Base Exstensions
+//https://www.htmlsymbols.xyz/unicode/U+00D7
 
 .ext-abstract-typography-htags__large {
   h1,
   h2,
   h3 {
-    @include scss-mixins.font-size__line-height(40, 48);    
     margin-bottom: 2rem;
-    text-transform: uppercase
+    text-transform: uppercase;
+    border-bottom: 2px solid #fff;
+    height: 40px;
+    position: relative;
+    @include scss-mixins.font-size__line-height(20, 26);    
+
+    @include scss-mixins.for-size(tablet-landscape-up) {  
+      @include scss-mixins.font-size__line-height(40, 48);    
+      border:0;
+    }
+
+    &:before{
+      content:'	\00D7';
+      width: 20px;
+      height: 20px;
+      height: 20px;
+      position: absolute;
+      right: -3px;
+      color: #fff;
+      font-weight: 600;
+      width:auto;
+      @include scss-mixins.font-size__line-height(50,30);    
+      @include scss-mixins.for-size(tablet-landscape-up) {  
+        display: none;
+      }
+    
+    }
   }
 }
 
@@ -66,9 +92,28 @@ body {
     color:#fff;
   }
 
+  .strap-line-header{
+    
+    @include scss-mixins.font-size__line-height(20, 26);    
+    
+      color: scss-abstracts.$brand-pink;
+      
+      @include scss-mixins.for-size(tablet-landscape-up) {  
+        
+        @include scss-mixins.font-size__line-height(28, 40);  
+
+    } 
+
+  }    
+
+  
+
   .strap-line{
+    @include scss-mixins.font-size__line-height(20, 26);    
       color: scss-abstracts.$brand-yellow;
-      @include scss-mixins.font-size__line-height(20, 26);    
+      @include scss-mixins.for-size(tablet-landscape-up) {  
+      @include scss-mixins.font-size__line-height(28, 40);  
+      }  
   }
 }
 
@@ -82,6 +127,50 @@ a {
     color: scss-abstracts.$brand-yellow;
   }
 }
+
+
+// Buttons
+.abstract-typography-download-brochure-link{
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid #fff;
+    height: 40px;
+    position: relative;
+    padding-right: 30px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    display: inline-block;
+
+    @include scss-mixins.font-size__line-height(20, 26);    
+
+    &:before{
+      content:'\00274C';
+      content: '+';
+      width: 20px;
+      height: 20px;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: -5px;
+      color: #fff;
+      font-weight: 600;
+      // transform: rotate(45deg);
+      transition: color .25s, border-bottom-color .25s;
+      @include scss-mixins.font-size__line-height(35,25);    
+    
+    }
+
+    &:hover{
+      border-bottom-color: scss-abstracts.$brand-yellow;
+      &:before{
+        color: scss-abstracts.$brand-yellow;
+      }
+
+    }
+  
+}
+
+
 
 // Lists
 
@@ -100,3 +189,9 @@ a {
   }
 }
 
+//  Footer
+.abstract-typography-footer-copyright{
+  color:#fff;
+  margin:0;
+  @include scss-mixins.font-size__line-height(12, 12);    
+}

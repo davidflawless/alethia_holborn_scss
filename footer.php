@@ -8,34 +8,26 @@
 ?>
 
 
-<footer>
+<footer class="template-footer">
 
-    <div class="footer-logo__pos">
 
-        <a href="<?php echo $siteurl; ?>">
-            <?php
-            $site_logo = get_field('site_logo','option')['c__single_image'];
-            
-            $loading        = 'lazy';
-            $img_mobile     = 'mobile_logo';
-            ?>
-            
-            <div class="d-block d-xl-none">
-                <?php
-                img_display(
-                    $loading,
-                    $img_mobile,
-                    $site_logo
-                );
-                ?>
+        
+
+            <div class="template-footer-site-logo-group">
+                        
+                <?php if ( has_custom_logo()) : ?>
+        
+                    <a  class="template-footer-site-logo-link" href="<?php echo $siteurl; ?>">
+                        <?php the_custom_logo(); ?>
+                    </a>
+                
+                <?php endif; ?>
+
             </div>
 
-        </a>
-    </div>
+        
 
-    <div class="copyright">
-        <p>Copyright &copy; <?= date("Y"); ?> Holborn</p>
-    </div>
+        <p class="abstract-typography-footer-copyright">Copyright &copy; <?= date("Y"); ?> Holborn</p>
 
 </footer>
 

@@ -3,10 +3,10 @@
 
 html,
 body {
-  @include scss-mixins.for-size(tablet-landscape-up) {
+  // @include scss-mixins.for-size(tablet-landscape-up) {
     height: 100%;
     margin: 0;
-  }
+  // }
 }
 
 .scaffolding {
@@ -20,18 +20,24 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 65px;
+    padding: 70px 20px 0;
+    
+    @include scss-mixins.for-size(tablet-landscape-up) {
+      padding: 65px;
+    }
   }
 
   &-row {
     @extend .scaffolding;
-    // border: 10px solid pink;
     display: flex;
     width: 100%;
-    // padding: 0 30px;
-    padding-top: 180px;
+    padding-top: 40px;
     flex: 1;
     box-sizing: border-box;
+
+    @include scss-mixins.for-size(tablet-landscape-up) {
+      padding-top: 180px;
+    }
 
     //   > div {
     //     padding-top: 50px;
