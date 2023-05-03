@@ -113,7 +113,7 @@ $lh__layout_name = 'template-partial-page-contact';
                             $echo_dump .= '<li class="abstract-typography-list__contact-us-list-item">' . $value['name'] . '</li>';
                             $echo_dump .= '<li class="abstract-typography-list__contact-us-list-item">M: <a href="tel:' . $value['mobile'] . '">' . $value['mobile'] . '</a></li>';
                             $echo_dump .= '<li class="abstract-typography-list__contact-us-list-item">T: <a href="tel:' . $value['telephone'] . '">' . $value['telephone'] . '</a></li>';
-                            $echo_dump .= '<li class="abstract-typography-list__contact-us-list-item"><a href="mailto:' . $value['email'] . '">' . $value['email'] . '</a></li>';
+                            $echo_dump .= '<li class="abstract-typography-list__contact-us-list-item"><a class="abstract-typography-list__contact-us-list-item-email" href="mailto:' . $value['email'] . '">' . $value['email'] . '</a></li>';
                             $echo_dump .= '</ul>';
 
                             echo $echo_dump;
@@ -162,7 +162,7 @@ $lh__layout_name = 'template-partial-page-contact';
                             $echo_dump .= '<li class="abstract-typography-list__contact-us-list-item">' . $value['name'] . '</li>';
                             $echo_dump .= '<li class="abstract-typography-list__contact-us-list-item">M: <a href="tel:' . $value['mobile'] . '">' . $value['mobile'] . '</a></li>';
                             $echo_dump .= '<li class="abstract-typography-list__contact-us-list-item">T: <a href="tel:' . $value['telephone'] . '">' . $value['telephone'] . '</a></li>';
-                            $echo_dump .= '<li class="abstract-typography-list__contact-us-list-item"><a href="mailto:' . $value['email'] . '">' . $value['email'] . '</a></li>';
+                            $echo_dump .= '<li class="abstract-typography-list__contact-us-list-item"><a class="abstract-typography-list__contact-us-list-item-email" href="mailto:' . $value['email'] . '">' . $value['email'] . '</a></li>';
                             $echo_dump .= '</ul>';
 
                             echo $echo_dump;
@@ -186,7 +186,11 @@ $lh__layout_name = 'template-partial-page-contact';
                 // ==================
                 ?>                
 
+                <div class="abstract-typography-wysiwyg-editor-standard--white">
                 
+                    <?= get_field('f__contact_footer') ?>
+                
+                </div>
         
             </div>
 

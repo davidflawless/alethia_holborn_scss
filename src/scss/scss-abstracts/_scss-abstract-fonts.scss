@@ -1,46 +1,63 @@
+//
+// https://codepen.io/imohkay/pen/YwQgBV
+//
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+$ff-basis-grotesque-regular-pro: 'basis-grotesque-regular-pro';
 
-
-
-.ff-montserrat {
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal; // 400
-
-    &-300{
-        @extend .ff-montserrat;
-        font-weight: 300;
-    }
-
-    &-400{
-        @extend .ff-montserrat;
-        font-weight: 400;        
-    }  
-    
-    &-500{
-        @extend .ff-montserrat;
-        font-weight: 500;        
-    }  
-    
-    &-600{
-        @extend .ff-montserrat;
-        font-weight: 600;        
-    }  
-    
-    &-700{
-        @extend .ff-montserrat;
-        font-weight: 700;        
-    }      
-
-//   &__light {
-//     @extend .ff-proxima-nova;
-//     font-weight: 400;
-//   }
-
-//   &__heavy {
-//     @extend .ff-proxima-nova;
-//     font-weight: 700;
-//   }
+@font-face {
+    font-family: 'basis-grotesque-regular-pro';
+    src: url('../../assets/fonts/basis-grotesque-regular-pro.woff2') format('woff2'),
+        url('../../assets/fonts/basis-grotesque-regular-pro.woff') format('woff'),
+        url('../../assets/fonts/basis-grotesque-regular-pro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
+
+
+// .ff-basis-grotesque-regular-pro{
+
+// }
+
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+// .ff-montserrat {
+//     font-family: 'Montserrat', sans-serif;
+//     font-style: normal; // 400
+
+//     &-300{
+//         @extend .ff-montserrat;
+//         font-weight: 300;
+//     }
+
+//     &-400{
+//         @extend .ff-montserrat;
+//         font-weight: 400;        
+//     }  
+    
+//     &-500{
+//         @extend .ff-montserrat;
+//         font-weight: 500;        
+//     }  
+    
+//     &-600{
+//         @extend .ff-montserrat;
+//         font-weight: 600;        
+//     }  
+    
+//     &-700{
+//         @extend .ff-montserrat;
+//         font-weight: 700;        
+//     }      
+
+// //   &__light {
+// //     @extend .ff-proxima-nova;
+// //     font-weight: 400;
+// //   }
+
+// //   &__heavy {
+// //     @extend .ff-proxima-nova;
+// //     font-weight: 700;
+// //   }
+// }
 
 

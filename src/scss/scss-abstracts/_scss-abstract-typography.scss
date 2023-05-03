@@ -2,7 +2,8 @@
 @use './scss-abstracts';
 
 body {
-    @extend .ff-montserrat;
+  font-family:  scss-abstracts.$ff-basis-grotesque-regular-pro;
+    // @extend .ff-montserrat;
 	font-size: 1rem;
 	font-weight: 400;    
   @include scss-mixins.font-size__line-height(16, 24);
@@ -92,15 +93,15 @@ body {
     color:#fff;
   }
 
-  .strap-line-header{
+  &-strap-line-header{
     
-    @include scss-mixins.font-size__line-height(20, 26);    
+    @include scss-mixins.font-size__line-height(27, 32);    
     
       color: scss-abstracts.$brand-pink;
       
       @include scss-mixins.for-size(tablet-landscape-up) {  
         
-        @include scss-mixins.font-size__line-height(28, 40);  
+        @include scss-mixins.font-size__line-height(35, 45);  
 
     } 
 
@@ -108,7 +109,7 @@ body {
 
   
 
-  .strap-line{
+  &-strap-line{
     @include scss-mixins.font-size__line-height(20, 26);    
       color: scss-abstracts.$brand-yellow;
       @include scss-mixins.for-size(tablet-landscape-up) {  
@@ -183,6 +184,9 @@ a {
       margin-bottom: 2rem;
       &-item{
         color: #fff;
+        &-email{
+          margin-right: 2rem;
+        }
       }
     }
 
