@@ -228,7 +228,7 @@ function browserSync(cb) {
     browsersync.init({
         proxy: "holborn.local", // Change this value to match your local URL.
         socket: {
-            domain: 'localhost:3002'
+            domain: 'localhost:3000'
         }
     });
     cb();
@@ -246,7 +246,7 @@ function browserSyncReload(cb) {
 function watchFiles() {
     // gulp.watch(config.themeScssPathAll, gulp.series(processStyles, sassLinter)); // Watch for style changes in 'lib' & 'theme'
     gulp.watch(config.themeScssPathAll, gulp.series(processStyles)); // Watch for style changes in 'lib' & 'theme'
-    gulp.watch(config.themeJsPathAll, gulp.series(processScripts, browserSyncReload)); // Watch for script changes in 'lib' & 'theme'
+    // gulp.watch(config.themeJsPathAll, gulp.series(processScripts, browserSyncReload)); // Watch for script changes in 'lib' & 'theme'
 
     // theme files
     gulp.watch(

@@ -94,6 +94,10 @@ body {
   }
 
   &-strap-line-header{
+
+    font-family:  scss-abstracts.$ff-domaine-display-regular;
+    
+
     
     @include scss-mixins.font-size__line-height(27, 32);    
     
@@ -103,13 +107,18 @@ body {
         
         @include scss-mixins.font-size__line-height(35, 45);  
 
-    } 
+    }
+    
+    span{
+      text-transform: uppercase;
+    }
 
   }    
 
   
 
   &-strap-line{
+    font-family:  scss-abstracts.$ff-domaine-display-regular;
     @include scss-mixins.font-size__line-height(20, 26);    
       color: scss-abstracts.$brand-yellow;
       @include scss-mixins.for-size(tablet-landscape-up) {  
@@ -145,8 +154,8 @@ a {
     @include scss-mixins.font-size__line-height(20, 26);    
 
     &:before{
-      content:'\00274C';
-      content: '+';
+      content:'\23F7';
+      // content: '+';
       width: 20px;
       height: 20px;
       width: 20px;
@@ -157,7 +166,8 @@ a {
       font-weight: 600;
       // transform: rotate(45deg);
       transition: color .25s, border-bottom-color .25s;
-      @include scss-mixins.font-size__line-height(35,25);    
+      @include scss-mixins.font-size__line-height(18,23);
+      @include scss-mixins.font-size__line-height(28,21);
     
     }
 

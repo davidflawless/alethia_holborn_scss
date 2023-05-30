@@ -4,6 +4,8 @@ if (bodyEl.classList.contains('home')) {
 
     setTimeout(function () {
         window.location.href = '/contact';
-    }, 10000)
+    }, 9200)
 
 }
+
+document.querySelector('.front-page-group').addEventListener('click', function () { window.location.href = '/contact'; });

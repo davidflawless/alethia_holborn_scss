@@ -83,6 +83,7 @@ body.home {
 
 .front-page {
   &-group {
+    cursor: pointer;
     // border: 10px solid red;
     height: 100vh;
     display: flex;

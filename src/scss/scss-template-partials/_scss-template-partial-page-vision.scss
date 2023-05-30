@@ -45,12 +45,12 @@
 
   &-img-group {
     position: absolute;
-    width: 70vw;
-    height: 70vw;
+    width: 50vw;
+    height: 50vw;
     overflow: hidden;
-    @include scss-mixins.for-size(tablet-landscape-up) {
-    //   top: 357px;
-    top: 255px;
+    // border: 10px solid red;
+    @include scss-mixins.for-size(desktop-up) {
+      top: 255px;
       width: 60vh;
       height: 60vh;
     }
